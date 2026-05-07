@@ -300,6 +300,196 @@
         body.light-mode font-mono {
             color: #0F172A !important;
         }
+
+        /* ============================================================= */
+        /*  QUBITΞX — Ultra-Premium Luxury Tech Logo System             */
+        /*  Titanium / Chrome / Neon Cyan / Orbital Ring / 3D Depth    */
+        /* ============================================================= */
+        .qbe-logo {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: baseline;
+            line-height: 1;
+            position: relative;
+            white-space: nowrap;
+            filter: drop-shadow(0 2px 12px rgba(34, 211, 238, 0.10));
+            transition: filter 0.4s ease;
+        }
+
+        .qbe-logo .qbe-sep {
+            display: inline-block;
+            width: 0.25em;
+        }
+
+        .qbe-logo:hover {
+            filter: drop-shadow(0 4px 24px rgba(34, 211, 238, 0.25));
+        }
+
+        /* Q — Titanium base with orbital quantum ring */
+        .qbe-logo .qbe-q {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(
+                180deg,
+                #F8FAFC 0%,
+                #CBD5E1 22%,
+                #64748B 55%,
+                #94A3B8 78%,
+                #E2E8F0 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Orbital ring on Q */
+        .qbe-logo .qbe-q::after {
+            content: '';
+            position: absolute;
+            right: -0.12em;
+            bottom: 0.00em;
+            width: 0.42em;
+            height: 0.42em;
+            border: 1.5px solid transparent;
+            border-radius: 50%;
+            border-image: linear-gradient(135deg, #22D3EE, #06B6D4, transparent, transparent) 1;
+            border-image: none;
+            border-color: #22D3EE transparent transparent #22D3EE;
+            box-shadow:
+                0 0 6px rgba(34, 211, 238, 0.60),
+                0 0 16px rgba(34, 211, 238, 0.25),
+                inset 0 0 3px rgba(34, 211, 238, 0.30);
+            transform: rotate(-35deg) scaleY(0.55);
+            transition: transform 0.4s ease;
+        }
+
+        .qbe-logo:hover .qbe-q::after {
+            animation: qbe-quantum-spin 2s linear infinite;
+        }
+
+        @keyframes qbe-quantum-spin {
+            0%   { transform: rotate(-35deg) scaleY(0.55); }
+            100% { transform: rotate(325deg) scaleY(0.55); }
+        }
+
+        /* Mid letters — Brushed chrome titanium */
+        .qbe-logo .qbe-mid {
+            display: inline-block;
+            font-weight: 600;
+            background: linear-gradient(
+                180deg,
+                #F1F5F9 0%,
+                #CBD5E1 20%,
+                #64748B 50%,
+                #94A3B8 80%,
+                #E2E8F0 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Ξ — Neon cyan Greek Xi with electric glow */
+        .qbe-logo .qbe-xi {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.92em;
+            margin: 0 0.01em 0 0.04em;
+            line-height: 1;
+            color: #22D3EE;
+            text-shadow:
+                0 0 6px rgba(34, 211, 238, 0.90),
+                0 0 14px rgba(34, 211, 238, 0.50),
+                0 0 28px rgba(34, 211, 238, 0.20);
+            position: relative;
+        }
+
+        /* subtle underline bar accent on Ξ */
+        .qbe-logo .qbe-xi::after {
+            content: '';
+            position: absolute;
+            bottom: -0.05em;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #22D3EE, transparent);
+            opacity: 0.6;
+        }
+
+        /* xchange — Cyber-tech gradient continuation */
+        .qbe-logo .qbe-x {
+            display: inline-block;
+            position: relative;
+            font-weight: 600;
+            background: linear-gradient(
+                180deg,
+                #67E8F9 0%,
+                #22D3EE 35%,
+                #0891B2 65%,
+                #06B6D4 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ─── Light-mode overrides ─── */
+        body.light-mode .qbe-logo {
+            filter: drop-shadow(0 2px 8px rgba(8, 145, 178, 0.10));
+        }
+        body.light-mode .qbe-logo:hover {
+            filter: drop-shadow(0 4px 18px rgba(8, 145, 178, 0.20));
+        }
+
+        body.light-mode .qbe-logo .qbe-q,
+        body.light-mode .qbe-logo .qbe-mid {
+            background: linear-gradient(
+                180deg,
+                #0F172A 0%,
+                #334155 25%,
+                #64748B 55%,
+                #475569 80%,
+                #1E293B 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.light-mode .qbe-logo .qbe-xi {
+            color: #0E7490;
+            text-shadow:
+                0 0 4px rgba(14, 116, 144, 0.60),
+                0 0 10px rgba(14, 116, 144, 0.25);
+        }
+
+        body.light-mode .qbe-logo .qbe-xi::after {
+            background: linear-gradient(90deg, transparent, #0E7490, transparent);
+        }
+
+        body.light-mode .qbe-logo .qbe-x {
+            background: linear-gradient(
+                180deg,
+                #0891B2 0%,
+                #0E7490 40%,
+                #155E75 70%,
+                #0891B2 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        
+
+        body.light-mode .qbe-logo .qbe-q::after {
+            border-color: #0E7490 transparent transparent #0E7490;
+            box-shadow:
+                0 0 4px rgba(14, 116, 144, 0.50),
+                0 0 10px rgba(14, 116, 144, 0.15);
+        }
     </style>
 </head>
 <body class="relative min-h-screen antialiased selection:bg-purple-500 selection:text-white">
@@ -319,11 +509,8 @@
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainHeader">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#home" class="flex items-center gap-2 group focus:outline-none">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-teal-400 flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:rotate-12 transition-transform duration-300">
-                    <i class="fa-solid fa-cubes text-white text-lg"></i>
-                </div>
-                <span class="text-2xl font-extrabold tracking-tight text-white">Qub<span class="text-teal-400">itex</span></span>
+            <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight text-white focus:outline-none">
+                Qubitex
             </a>
 
             <!-- Desktop Links -->
@@ -535,7 +722,7 @@
                             <div class="w-10 h-10 rounded-full bg-slate-700 border border-purple-500 flex items-center justify-center font-bold text-xs text-white">DR</div>
                             <div>
                                 <div class="text-xs font-bold text-white">Dr. Aris Vance</div>
-                                <div class="text-[10px] text-slate-400">Founder & Chief Innovator, Qubitex Labs</div>
+                                <div class="text-[10px] text-slate-400">Founder & Chief Innovator, Quantum Bit Exchange</div>
                             </div>
                         </div>
                     </div>
@@ -1333,9 +1520,9 @@
                         IIT Bombay Alumnus, Former Senior Systems Lead at Silicon Valley labs. Deep tech architect passionate about active logic paradigms for Indian schools.
                     </p>
                     <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
-                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/xBihari/" target="_blank" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/xBihari" target="_blank" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://github.com/xBihari/" target="_blank" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
@@ -1352,8 +1539,8 @@
                         Chartered Accountant (CA) & IIM Ahmedabad graduate with 9+ years spent structuring retail investment guidelines and simplified money management habits.
                     </p>
                     <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
-                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/xBihari/" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/xBihari" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
@@ -1370,8 +1557,8 @@
                         Certified Ethical Hacker (CEH) and defense analyst. Designs secure local sandboxes and digital safety drills for school cohorts.
                     </p>
                     <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
-                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/xBihari/" target="_blank" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/xBihari/" target="_blank" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
@@ -1388,8 +1575,8 @@
                         Machine learning specialist with continuous focus on prompt systems. Turns complex model weights into bite-sized code logic tools.
                     </p>
                     <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
-                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/xBihari/" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://x.com/xBihari" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                 </div>
 
@@ -1458,7 +1645,7 @@
                                 </button>
                             </div>
                             <p class="text-[10px] text-slate-500 leading-relaxed pt-1">
-                                <i class="fa-solid fa-circle-info mr-1 text-teal-400"></i> On submission, your details will be pre-filled in an email to our admissions team at <span class="text-emerald-400 font-bold">abc@gmail.com</span>. Just hit Send.
+                                <i class="fa-solid fa-circle-info mr-1 text-teal-400"></i> On submission, your details will be pre-filled in an email to our admissions team at <span class="text-emerald-400 font-bold">enquire.am@gmail.com</span>. Just hit Send.
                             </p>
                         </form>
                     </div>
@@ -1475,7 +1662,7 @@
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="text-teal-400 mt-0.5"><i class="fa-solid fa-envelope"></i></div>
-                                    <p class="text-slate-300">admissions@qubitex-edtech.io</p>
+                                    <p class="text-slate-300">enquire.am@gmail.com</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="text-yellow-400 mt-0.5"><i class="fa-solid fa-phone"></i></div>
@@ -1517,20 +1704,17 @@
                 
                 <!-- Footer Info / Branding -->
                 <div class="md:col-span-4 space-y-4">
-                    <a href="#home" class="flex items-center gap-2 group">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-teal-400 flex items-center justify-center text-white text-sm shadow-md">
-                            <i class="fa-solid fa-cubes"></i>
-                        </div>
-                        <span class="text-xl font-bold tracking-tight text-white">Qub<span class="text-teal-400">itex</span></span>
+                    <a href="#home" class="text-lg font-extrabold tracking-tight text-white">
+                        Qubitex
                     </a>
                     <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
                         Qubitex delivers state-of-the-art gamified courses in code logic execution, safe web behavior parameters, foundational artificial intelligence prompts, and resilient personal wealth tactics.
                     </p>
                     <div class="flex items-center gap-3 text-slate-400 pt-2">
-                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-youtube text-xs"></i></a>
+                        <a href="https://github.com/xBihari/" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-github text-xs"></i></a>
+                        <a href="https://x.com/xBihari" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                        <a href="https://www.linkedin.com/in/xBihari/" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-linkedin text-xs"></i></a>
+                        <a href="https://www.instagram.com/xBihari/" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
                     </div>
                 </div>
 
@@ -1576,7 +1760,7 @@
 
             <!-- Bottom Copyright bar -->
             <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
-                <div>&copy; 2026 Qubitex Labs Inc. All rights reserved around the biosphere.</div>
+                <div>&copy; 2026 Quantum Bit Exchange. All rights reserved.</div>
                 <div class="flex gap-4">
                     <a href="#" class="hover:text-slate-300 transition-colors">Privacy Paradigm</a>
                     <a href="#" class="hover:text-slate-300 transition-colors">Terms of Vector</a>
@@ -2054,7 +2238,7 @@
             const formattedTime = startDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
             const isEnrollment = !!pendingEnrollmentCountId;
-            const targetEmail = 'abc@gmail.com';
+            const targetEmail = 'enquire.am@gmail.com';
             const whatsappNumber = '919930000529';
 
             if (isEnrollment) {
@@ -2330,7 +2514,7 @@ ${name}`;
 
 
         // 7. Contact Form -> Email Auto-Forward Handler
-        // Submits all form details via prefilled email to abc@gmail.com
+        // Submits all form details via prefilled email to enquire.am@gmail.com
         function handleContactSubmit(event) {
             event.preventDefault();
 
@@ -2437,7 +2621,7 @@ _Sent via Quantum Bit Exchange Website_`;
 _Requesting cryptographic trial token key generation for distributed student sandbox access points._`;
 
             const encodedPayload = encodeURIComponent(providerPayload);
-            const targetWhatsApp = "919930000529"; // Updated phone destination variable
+            const targetWhatsApp = "919930000529";
             const providerRedirectUrl = `https://wa.me/${targetWhatsApp}?text=${encodedPayload}`;
 
             // Trigger window redirect token pipeline
