@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qubitex | Future-Ready EdTech - AI, Coding & Financial Literacy</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Qubitex is a next-generation futuristic edtech brand teaching AI learning, coding for beginners, internet safety, digital literacy, and money management skills for students, parents, and schools.">
+    <meta name="keywords" content="edtech, digital literacy, financial literacy, AI learning, coding for beginners, internet safety, future-ready education, money management skills, budgeting, saving, Qubitex">
+    
+    <!-- Tailwind CSS v4 Browser CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons for premium visual tech symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --color-deep-blue: #0F172A;
+            --color-electric-purple: #7C3AED;
+            --color-teal: #14B8A6;
+            --color-soft-yellow: #FACC15;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        @media (max-width: 767px) {
+            body { padding-bottom: 76px; }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Glassmorphism styles */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(124, 58, 237, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glowing background animation blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            animation: floatBlob 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(40px, -60px) scale(1.2); }
+            100% { transform: translate(-20px, 40px) scale(0.9); }
+        }
+
+        /* Reveal animations classes handled by JS Intersection Observer */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scale-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Premium Gradient Text */
+        .text-gradient-purple-teal {
+            background: linear-gradient(135deg, #A78BFA 0%, #14B8A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-hero {
+            background: linear-gradient(135deg, #FFFFFF 30%, #A78BFA 70%, #14B8A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Interactive pulse glow button */
+        .btn-glow-purple {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-glow-purple:hover {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.6), inset 0 0 10px rgba(255,255,255,0.2);
+            transform: scale(1.03);
+        }
+
+        .btn-glow-teal {
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-glow-teal:hover {
+            box-shadow: 0 0 30px rgba(20, 184, 166, 0.5);
+            transform: scale(1.03);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7C3AED;
+        }
+
+        /* Grid pattern overlay */
+        .tech-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Light mode keeps the futuristic glass style while improving daytime readability. */
+        body.light-mode {
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+
+        body.light-mode .glass-card {
+            background: rgba(255, 255, 255, 0.72);
+            border-color: rgba(15, 23, 42, 0.10);
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.10);
+        }
+
+        body.light-mode .glass-card:hover {
+            border-color: rgba(124, 58, 237, 0.28);
+            box-shadow: 0 16px 44px rgba(124, 58, 237, 0.14);
+        }
+
+        body.light-mode .glass-nav {
+            background: rgba(255, 255, 255, 0.78);
+            border-bottom-color: rgba(15, 23, 42, 0.08);
+        }
+
+        body.light-mode .tech-grid {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+        }
+
+        body.light-mode .blob {
+            opacity: 0.20;
+        }
+
+        body.light-mode #particleCanvas {
+            opacity: 0.22 !important;
+        }
+
+        body.light-mode .text-gradient-hero {
+            background: linear-gradient(135deg, #0F172A 20%, #7C3AED 65%, #0F766E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body.light-mode [class*="text-slate-200"],
+        body.light-mode [class*="text-slate-300"] {
+            color: #334155 !important;
+        }
+
+        body.light-mode [class*="text-slate-400"],
+        body.light-mode [class*="text-slate-500"] {
+            color: #64748B !important;
+        }
+
+        body.light-mode .text-white {
+            color: #0F172A !important;
+        }
+
+        body.light-mode [class*="bg-gradient"] .text-white,
+        body.light-mode .bg-gradient-to-r.text-white,
+        body.light-mode .bg-gradient-to-tr.text-white,
+        body.light-mode button.text-white,
+        body.light-mode a.text-white {
+            color: #FFFFFF !important;
+        }
+
+        body.light-mode [class*="bg-slate-950"],
+        body.light-mode [class*="bg-slate-900"],
+        body.light-mode [class*="bg-slate-800"] {
+            background-color: rgba(255, 255, 255, 0.70) !important;
+        }
+
+        body.light-mode [class*="border-slate-"] {
+            border-color: rgba(15, 23, 42, 0.12) !important;
+        }
+
+        body.light-mode input,
+        body.light-mode select,
+        body.light-mode textarea {
+            background: rgba(255, 255, 255, 0.92) !important;
+            color: #0F172A !important;
+            border-color: rgba(15, 23, 42, 0.14) !important;
+        }
+
+        body.light-mode input::placeholder,
+        body.light-mode textarea::placeholder {
+            color: #94A3B8 !important;
+        }
+
+        body.light-mode ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        body.light-mode details ul li {
+            color: #334155 !important;
+        }
+        body.light-mode details summary {
+            color: #7C3AED !important;
+        }
+        body.light-mode header nav a {
+            color: #334155;
+        }
+        body.light-mode header nav a:hover {
+            color: #7C3AED;
+        }
+        body.light-mode footer {
+            background-color: #F1F5F9 !important;
+            border-top-color: rgba(15, 23, 42, 0.08) !important;
+        }
+        body.light-mode footer h4 {
+            color: #4C1D95 !important;
+        }
+        body.light-mode footer ul a {
+            color: #475569 !important;
+        }
+        body.light-mode footer ul a:hover {
+            color: #7C3AED !important;
+        }
+        body.light-mode .text-slate-400, body.light-mode .text-slate-300 {
+            color: #475569 !important;
+        }
+        body.light-mode font-mono {
+            color: #0F172A !important;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- Background Tech Grid & Animated Blobs -->
+    <div class="fixed inset-0 tech-grid pointer-events-none z-0 opacity-70"></div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="blob bg-purple-600 w-[500px] h-[500px] top-[-10%] left-[-10%]"></div>
+        <div class="blob bg-teal-500 w-[600px] h-[600px] top-[40%] right-[-10%] animation-delay-2000"></div>
+        <div class="blob bg-purple-900 w-[400px] h-[400px] bottom-[-10%] left-[20%] animation-delay-4000"></div>
+    </div>
+
+    <!-- Background Interstellar Particle Canvas Layer -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-1 opacity-40"></canvas>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainHeader">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2 group focus:outline-none">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-teal-400 flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fa-solid fa-cubes text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-white">Qub<span class="text-teal-400">itex</span></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">Home</a>
+                <a href="#about" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">About</a>
+                <a href="#programs" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">Programs</a>
+                <a href="#projects" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">Ongoing Projects</a>
+                <a href="#parents" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">For Parents</a>
+                <a href="#contact" class="hover:text-teal-400 transition-colors duration-200 py-2 border-b-2 border-transparent hover:border-teal-400">Contact</a>
+            </div>
+
+            <!-- Header Right: Desktop Button / Compact Mobile Action Button -->
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" type="button" class="w-10 h-10 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-200 hover:text-teal-400 hover:border-teal-400/50 transition-all duration-300 flex items-center justify-center cursor-pointer" aria-label="Switch to light mode" aria-pressed="false">
+                    <i id="themeToggleIcon" class="fa-solid fa-sun text-sm"></i>
+                </button>
+                <button onclick="openDemoModal('Book a Demo — Quantum Bit Exchange')" class="px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl text-xs sm:text-sm font-semibold btn-glow-purple cursor-pointer">
+                    Book Demo
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HIGH-FIDELITY 'LIQUID GLASS' BOTTOM MINIMALIST NAVIGATION BAR -->
+    <nav class="md:hidden fixed bottom-4 left-6 right-6 z-50 transition-all duration-300 shadow-2xl" style="background: rgba(15, 23, 42, 0.42); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 30px; box-shadow: 0 16px 40px -10px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,255,0.15);">
+        <div class="grid grid-cols-4 text-center py-2 px-1">
+            <a href="#home" class="mobile-tab-item flex flex-col items-center justify-center text-teal-400 hover:text-teal-400 transition-colors py-1">
+                <i class="fa-solid fa-house text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Home</span>
+            </a>
+            <a href="#programs" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
+                <i class="fa-solid fa-graduation-cap text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Courses</span>
+            </a>
+            <a href="#projects" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
+                <i class="fa-solid fa-bolt text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Labs</span>
+            </a>
+            <a href="#contact" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
+                <i class="fa-solid fa-envelope text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Mail</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-24 md:pt-48 md:pb-36 flex items-center justify-center overflow-hidden z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Left Copy -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs sm:text-sm font-semibold text-purple-300 tracking-wide uppercase">
+                    <span class="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+                    Next-Generation EdTech Platform
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gradient-hero">
+                    Learn Digital Tech and Money Skills for the Future.
+                </h1>
+                
+                <p class="text-slate-300 text-base sm:text-lg lg:text-xl font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Qubitex helps learners build confidence in technology, AI, internet safety, coding, and personal finance through fun, practical, future-focused learning built for the modern era.
+                </p>
+                
+                <!-- Hero CTAs -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#programs" class="w-full sm:w-auto text-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold rounded-xl btn-glow-purple transition-all duration-300">
+                        Join a Program <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <button onclick="openDemoModal('Book a Demo — Quantum Bit Exchange')" class="w-full sm:w-auto text-center px-8 py-4 bg-slate-800/80 border border-slate-700 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all duration-300">
+                        Book a Demo
+                    </button>
+                    <a href="#projects" class="w-full sm:w-auto text-center px-4 py-2 text-sm text-teal-400 hover:text-teal-300 font-medium transition-colors flex items-center justify-center gap-1">
+                        Explore Modules <i class="fa-solid fa-circle-nodes ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Live stats badges in hero -->
+                <div class="pt-8 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 border-t border-slate-800">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-bold text-white">15k+</div>
+                        <div class="text-xs text-slate-400 font-medium mt-0.5">Active Learners</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-bold text-teal-400">98%</div>
+                        <div class="text-xs text-slate-400 font-medium mt-0.5">Parent Trust</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-bold text-purple-400">50+</div>
+                        <div class="text-xs text-slate-400 font-medium mt-0.5">Future Tracks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Right Visuals (Futuristic digital illustration with parallax UI layers) -->
+            <div class="lg:col-span-5 relative flex justify-center items-center reveal-right mt-8 lg:mt-0">
+                <!-- Outer glow shadow ring -->
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-purple-600/20 filter blur-3xl -z-10 animate-pulse"></div>
+                
+                <!-- Main Illustration Frame -->
+                <div class="relative w-full max-w-md aspect-square bg-gradient-to-br from-slate-900/60 to-purple-950/40 border border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col justify-between overflow-hidden group">
+                    
+                    <!-- Background code lines aesthetic -->
+                    <div class="absolute inset-0 p-4 opacity-10 font-mono text-[10px] uppercase text-teal-300 overflow-hidden select-none leading-relaxed">
+                        const qubitex = () => {<br>
+                        &nbsp;&nbsp;learners: "Future Leaders",<br>
+                        &nbsp;&nbsp;skills: ["AI", "Crypto", "Budgeting", "Logic"],<br>
+                        &nbsp;&nbsp;safety: true,<br>
+                        &nbsp;&nbsp;confidence: parseFloat('100.00')<br>
+                        };<br>
+                        while(true) { teachNextGen(); }
+                    </div>
+
+                    <!-- Visual Header with mock window tabs -->
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 z-10">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/70 block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/70 block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/70 block"></span>
+                        </div>
+                        <div class="text-xs text-slate-400 font-mono tracking-widest bg-slate-900 px-3 py-1 rounded-md border border-slate-800">QUBITEX_CORE_ENGINE.EXE</div>
+                    </div>
+
+                    <!-- Central Floating Hologram Simulation -->
+                    <div class="my-auto py-8 relative flex flex-col items-center justify-center z-10">
+                        <!-- Neon AI brain / network simulation icon -->
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-600 to-teal-400 flex items-center justify-center text-white text-4xl shadow-xl shadow-purple-500/30 mb-4 animate-bounce" style="animation-duration: 4s;">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-sm font-bold tracking-wide text-white">AI & Coding Logic Node</div>
+                            <div class="text-xs text-teal-400 mt-1 font-mono">Status: Active & Secure</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Floating Micro UI Card 1 (Personal Finance / Coins Tracker) -->
+                    <div class="absolute top-1/4 -left-6 glass-card p-3 rounded-xl flex items-center gap-3 max-w-[170px] shadow-lg animate-float" style="animation: floatBlob 7s infinite alternate ease-in-out;">
+                        <div class="w-9 h-9 rounded-lg bg-yellow-500/20 flex items-center justify-center text-yellow-400">
+                            <i class="fa-solid fa-coins text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-slate-400 font-semibold uppercase">Smart Savings</div>
+                            <div class="text-xs font-bold text-white">+$420.50 Saved</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Floating Micro UI Card 2 (Cybersecurity / Shield Badge) -->
+                    <div class="absolute bottom-1/4 -right-6 glass-card p-3 rounded-xl flex items-center gap-3 max-w-[170px] shadow-lg animate-float" style="animation: floatBlob 9s infinite alternate-reverse ease-in-out;">
+                        <div class="w-9 h-9 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-slate-400 font-semibold uppercase">Net Safety</div>
+                            <div class="text-xs font-bold text-white">100% Shielded</div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom UI Graph Line simulation -->
+                    <div class="border-t border-slate-800 pt-3 flex items-center justify-between z-10 text-[11px] text-slate-400">
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-chart-line text-purple-400"></i> Skill Curve Exponential</span>
+                        <span class="text-yellow-400 font-bold"><i class="fa-solid fa-star"></i> 4.9/5</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT QUBITEX SECTION -->
+    <section id="about" class="py-20 relative z-10 bg-slate-900/40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-teal-400 uppercase mb-2">Our Foundation</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Pioneering Tomorrow's Essential Knowledge
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-teal-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Two-Column Responsive Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Interactive Stats & Vision Cards -->
+                <div class="lg:col-span-6 space-y-6 reveal-left">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 text-8xl text-white font-black"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 text-sm"><i class="fa-solid fa-rocket"></i></span>
+                            Our Core Mission
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            To bridge the critical gap in traditional systems by equipping young minds and beginners with essential digital technology power, practical AI navigation, safe internet citizenship, and elite financial literacy frameworks. We aim to inspire true life preparedness.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 text-8xl text-white font-black"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400 text-sm"><i class="fa-solid fa-eye"></i></span>
+                            Founder’s Vision
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            "In an era where artificial intelligence defines careers and digital capital dictates security, understanding code logic and smart money budgeting isn't optional—it is the baseline for sovereignty. Qubitex was engineered to turn beginners into digital natives."
+                        </p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 border border-purple-500 flex items-center justify-center font-bold text-xs text-white">DR</div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Dr. Aris Vance</div>
+                                <div class="text-[10px] text-slate-400">Founder & Chief Innovator, Qubitex Labs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Explanatory Content & Feature Matrix -->
+                <div class="lg:col-span-6 space-y-6 reveal-right">
+                    <h3 class="text-2xl font-bold text-white">
+                        Why Digital Literacy & Financial Competence Matter Now
+                    </h3>
+                    
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Traditional academic curricula frequently overlook the hyper-connected, fast-evolving tools of modern industry. Learners are exposed to digital environments without cyber shields, and earn livelihoods without knowing capital preservation or basic algorithmic thinking.
+                    </p>
+
+                    <!-- Feature Matrix -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex gap-3">
+                            <div class="text-teal-400 mt-1 text-base"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Future-Ready Philosophy</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Curriculum adjusted iteratively to parallel advanced real-world AI and SaaS milestones.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="text-teal-400 mt-1 text-base"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Practical & Action-Based</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">No pure memorization. Students deploy actual code logic, run sandbox budgets, and secure test APIs.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="text-purple-400 mt-1 text-base"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Gamified Milestones</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">High-energy engagement loops that keep students excited to stack badges and skills.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="text-purple-400 mt-1 text-base"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Parent-Monitored Trust</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Complete transparent dashboards showing progress metrics, security scores, and skill certificates.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="#programs" class="inline-flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 font-bold tracking-wide group transition-colors">
+                            Explore our customized training syllabus 
+                            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROGRAMS / MODULES SECTION -->
+    <section id="programs" class="py-20 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-purple-400 uppercase mb-2">Comprehensive Curriculum</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Premium Modules Tailored for Tomorrow
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+                    A multi-tiered, intuitive path built to elevate beginners into tech-savvy, financially clever masterminds.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-teal-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+             <!-- Responsive Programs Grid Layout (8 Specialized Premium Cards with Modal Breakdowns) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card: Foundation Workshop (New Program at Top) -->
+                <div onclick="openProgramModal('foundation-workshop')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer border border-orange-500/20 shadow-lg shadow-orange-500/5">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 text-xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Foundation Workshop (Std 6-8)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            "Build Your Digital Superpowers!" A high-energy curriculum map covering prompt mechanics, internet drivers tests, Scratch coding logic, and physical jar budgeting.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>10 Modules</span>
+                        <span class="text-orange-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View Breakdown <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card: Launchpad Workshop (New Program at Top) -->
+                <div onclick="openProgramModal('launchpad-workshop')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer border border-yellow-500/20 shadow-lg shadow-yellow-500/5" style="transition-delay: 50ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl group-hover:bg-yellow-500 group-hover:text-slate-950 transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">Launchpad Workshop (Std 9-12)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            "Build Your Unfair Advantage." Professional training designed around AI stacks, personal brand kits, Python scripts, Excel simulators, and Shark Tank pitches.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>10 Modules</span>
+                        <span class="text-yellow-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View Breakdown <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+                
+                <!-- Card 1: Digital Basics -->
+                <div onclick="openProgramModal('digital-basics')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Digital Basics</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Master the core mechanics of hardware, cloud structures, operating architectures, and essential navigation metrics.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>4 Modules</span>
+                        <span class="text-purple-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Internet Safety -->
+                <div onclick="openProgramModal('internet-safety')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">Internet Safety</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Defend against cyber threats, phishing scams, malicious actors, digital footprint tracking, and social media vulnerability.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>5 Modules</span>
+                        <span class="text-teal-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Coding Fundamentals -->
+                <div onclick="openProgramModal('coding-fundamentals')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">Coding Fundamentals</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Unpack logic loops, conditional parameters, variables, data structures, and the absolute building blocks of software.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>8 Modules</span>
+                        <span class="text-indigo-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 4: AI for Beginners -->
+                <div onclick="openProgramModal('ai-beginners')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 300ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">AI for Beginners</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Understand generative AI models, deep learning prompts, machine logic safely, and how to harness AI as an regular superpower.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>6 Modules</span>
+                        <span class="text-purple-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Smart Money Habits -->
+                <div onclick="openProgramModal('smart-money')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl group-hover:bg-yellow-500 group-hover:text-slate-950 transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">Smart Money Habits</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Develop a psychological edge regarding money, learning early delayed gratification and asset vs liability identification.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>4 Modules</span>
+                        <span class="text-yellow-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Budgeting & Saving -->
+                <div onclick="openProgramModal('budgeting-saving')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Budgeting and Saving</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                            Interactive spreadsheet simulations, envelope tracking methods, compound interest basics, and goal-oriented emergency funds.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>5 Modules</span>
+                        <span class="text-emerald-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 7: Digital Payments -->
+                <div onclick="openProgramModal('digital-payments')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">Digital Payments</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Demystify online banking apps, crypto tokens, digital wallets, transaction verification, block validation, and safety protocols.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>6 Modules</span>
+                        <span class="text-teal-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 8: Career Readiness -->
+                <div onclick="openProgramModal('career-readiness')" class="glass-card p-6 rounded-2xl relative group flex flex-col justify-between reveal-up cursor-pointer" style="transition-delay: 300ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 text-xl group-hover:bg-rose-600 group-hover:text-white transition-all duration-300 mb-4 shadow-md">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-rose-300 transition-colors">Career Readiness</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Build next-gen portfolio strategies, modern workplace tech fluency, professional digital netiquette, and freelancing ethics.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <span>7 Modules</span>
+                        <span class="text-rose-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">View <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ONGOING PROJECTS SECTION -->
+    <section id="projects" class="py-20 relative z-10 bg-slate-900/30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-teal-400 uppercase mb-2">Active Cohorts & Tracks</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Live Ongoing Project Labs
+                </p>
+                <p class="text-slate-400 text-sm mt-2 max-w-lg mx-auto">
+                    Students don't just study solo; they register for coordinated interactive live sprints with other worldwide learners.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-400 to-purple-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Card-Based Section for Active Tracks -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 6: Foundation Workshop (Shifted to Top) -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-orange-400/10 text-orange-400 border border-orange-400/20 uppercase tracking-wider">
+                                10-Day Workshop
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-6">0</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Foundation Workshop <span class="text-sm font-normal text-orange-400">(Std 6–8)</span></h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            "Build Your Digital Superpowers!" A 10-day high-energy workshop covering AI creativity, cyber safety, Scratch coding, and money habits through games, crafts, and storytelling.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">AI Art & Prompts</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Phishing Detection</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Scratch Game Dev</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">3-Jar Money System</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Budget Boss Simulation</span>
+                            </div>
+                        </div>
+                        <div class="text-[10px] text-slate-500 border-t border-slate-800/60 pt-2">
+                            <i class="fa-solid fa-clock text-orange-400 mr-1"></i> 9:30 AM – 12:00 PM · Max 20 Students · "Digital Architect" Certificate
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Foundation Workshop (Std 6-8)', 'count-proj-6')" class="w-full text-center py-2.5 bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-700 hover:to-rose-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 7: Launchpad Workshop (Shifted to Top) -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 50ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 uppercase tracking-wider">
+                                10-Day Bootcamp
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-7">0</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Launchpad Workshop <span class="text-sm font-normal text-yellow-400">(Std 9–12)</span></h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            "Build Your Unfair Advantage." A 10-day deep-work bootcamp covering AI productivity, Python coding, personal branding, tax & credit basics, and Shark Tank pitches.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Prompt Engineering</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Python & GitHub</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">LinkedIn & Portfolio</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">SIP & Tax Basics</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Shark Tank Pitching</span>
+                            </div>
+                        </div>
+                        <div class="text-[10px] text-slate-500 border-t border-slate-800/60 pt-2">
+                            <i class="fa-solid fa-clock text-yellow-400 mr-1"></i> 1:00 PM – 4:00 PM · Max 30 Students · "Future Navigator" Certificate
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Launchpad Workshop (Std 9-12)', 'count-proj-7')" class="w-full text-center py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 100ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-teal-400/10 text-teal-400 border border-teal-400/20 uppercase tracking-wider">
+                                Open for Enrollment
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-1">142</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Digital Literacy Starter Track</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            The essential foundational boot camp designed for absolute beginners to gain mastery over files, computers, cloud computing, and basic network functions.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Cloud Architecture</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">OS Navigation</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Hardware Basics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Digital Literacy Starter Track', 'count-proj-1')" class="w-full text-center py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 150ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-teal-400/10 text-teal-400 border border-teal-400/20 uppercase tracking-wider">
+                                Open for Enrollment
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-2">89</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Personal Finance Foundations</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Demystifying financial vocabulary. Students manage a live simulated $5,000 portfolio to understand asset classes and compound returns risk-free.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Compound Returns</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Asset Valuation</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Risk Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Personal Finance Foundations', 'count-proj-2')" class="w-full text-center py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 200ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 uppercase tracking-wider">
+                                Filling Fast (3 left)
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-3">211</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Safe Internet Explorer Program</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            A security-driven gamified sprint. Students spot real-world phishing headers, diagnose encrypted certs, and construct solid private vault networks.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Cyber Hygiene</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Phishing ID</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Vault Mgmt</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Safe Internet Explorer Program', 'count-proj-3')" class="w-full text-center py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Join This Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 250ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-teal-400/10 text-teal-400 border border-teal-400/20 uppercase tracking-wider">
+                                Open for Enrollment
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-4">305</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">AI & Future Skills Lab</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Advanced prompt engineering, neural-net visual synthesis, context token parameters, and custom AI agents built using no-code automation frameworks.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Prompt Mechanics</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Neural Visuals</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Agent Pipelines</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('AI & Future Skills Lab', 'count-proj-4')" class="w-full text-center py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between reveal-up" style="transition-delay: 300ms;">
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-1 text-[11px] font-bold rounded-md bg-purple-400/20 text-purple-300 border border-purple-400/30 uppercase tracking-wider">
+                                Starts Next Week
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-user"></i> <span id="count-proj-5">95</span> Enrolled</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Smart Spending Challenge</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            A rapid 14-day real-world live simulation where students optimize fixed vs variable budgets to extract maximum savings efficiency under high inflation metrics.
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <div class="text-xs font-semibold text-slate-400">Skills Learners Gain:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Micro-Budgeting</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Expense Audit</span>
+                                <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">Resource Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800/80">
+                        <button onclick="enrollProject('Smart Spending Challenge', 'count-proj-5')" class="w-full text-center py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold rounded-lg transition-all cursor-pointer">
+                            Join This Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Updates Informational Box -->
+                <div class="bg-gradient-to-br from-purple-950/40 to-slate-900/80 border border-purple-500/20 rounded-2xl p-6 flex flex-col justify-between items-start reveal-up" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="w-8 h-8 rounded-full bg-teal-400/20 text-teal-400 flex items-center justify-center text-xs mb-3 animate-ping">
+                            <i class="fa-solid fa-signal"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white">Need a Bespoke Track for Your School?</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            We routinely customize micro-cohorts and curriculum endpoints for primary networks, continuous testing environments, and alternative homeschool associations.
+                        </p>
+                    </div>
+                    <a href="#contact" class="mt-4 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-teal-400 font-semibold text-xs rounded-xl border border-slate-700 transition-colors w-full text-center">
+                        Contact Institutional Sales
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LEARNING EXPERIENCE SECTION -->
+    <section class="py-20 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details / Concept -->
+                <div class="lg:col-span-5 space-y-6 reveal-left">
+                    <h2 class="text-xs font-bold tracking-widest text-purple-400 uppercase">The Methodology</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        An Interactive Learning Experience Unmatched Globally.
+                    </p>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Say goodbye to stale textbook loops and monotone multi-hour slide reels. Qubitex treats future skill-building like an active multiplayer venture game where every level yields tangible output.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex gap-3 items-start">
+                            <div class="w-6 h-6 rounded-full bg-teal-400/10 text-teal-400 flex items-center justify-center text-xs mt-1 shrink-0"><i class="fa-solid fa-gamepad"></i></div>
+                            <p class="text-xs text-slate-300"><strong class="text-white block font-semibold mb-0.5">Gamified Learning Loops</strong> Points, rank progression, and micro-rewards ensure engagement stays elevated natively.</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                            <div class="w-6 h-6 rounded-full bg-purple-400/10 text-purple-400 flex items-center justify-center text-xs mt-1 shrink-0"><i class="fa-solid fa-hourglass-half"></i></div>
+                            <p class="text-xs text-slate-300"><strong class="text-white block font-semibold mb-0.5">Beginner-Friendly Frameworks</strong> Zero pre-existing code familiarity required. Step-by-step onboarding welcomes every user.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Timeline / Feature Steps Cards -->
+                <div class="lg:col-span-7 relative space-y-4 reveal-right">
+                    
+                    <!-- Step 1 Card -->
+                    <div class="glass-card p-5 rounded-xl flex items-start gap-4">
+                        <div class="text-xl font-black text-purple-500 font-mono bg-purple-500/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">01</div>
+                        <div>
+                            <h4 class="text-base font-bold text-white">Interactive Micro-Lessons</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Experience 10-minute dynamic interactive modules packed with vivid, bite-sized software scripts and live-updating economic charts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Card -->
+                    <div class="glass-card p-5 rounded-xl flex items-start gap-4 border-l-2 border-l-teal-400">
+                        <div class="text-xl font-black text-teal-400 font-mono bg-teal-400/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">02</div>
+                        <div>
+                            <h4 class="text-base font-bold text-white">Safe Sandbox Laboratories</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Run code strings inside clean, secure in-browser terminal windows and allocate faux cryptocurrency assets without exposing any live family capital.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 Card -->
+                    <div class="glass-card p-5 rounded-xl flex items-start gap-4">
+                        <div class="text-xl font-black text-yellow-400 font-mono bg-yellow-400/10 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">03</div>
+                        <div>
+                            <h4 class="text-base font-bold text-white">Real-World Practical Challenges</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Students execute a mock tax calculation, configure a firewall, audit prompt outputs, or build an individual mini portfolio page from absolute scratch.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PARENT & SCHOOL TRUST SECTION -->
+    <section id="parents" class="py-20 relative z-10 bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-teal-400 uppercase mb-2">Ironclad Guardrails</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    The Ultimate Framework for Parents & Schools
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-400 to-purple-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Column: Trust Graphics / Badges -->
+                <div class="lg:col-span-4 grid grid-cols-2 gap-4 reveal-left">
+                    <div class="glass-card p-4 rounded-xl text-center flex flex-col justify-center items-center">
+                        <i class="fa-solid fa-user-lock text-2xl text-teal-400 mb-2"></i>
+                        <div class="text-xs font-bold text-white">100% COPPA Safe</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5">Strict privacy protocols</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center flex flex-col justify-center items-center">
+                        <i class="fa-solid fa-graduation-cap text-2xl text-purple-400 mb-2"></i>
+                        <div class="text-xs font-bold text-white">STEM Certified</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5">Approved logic mapping</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center flex flex-col justify-center items-center">
+                        <i class="fa-solid fa-chart-pie text-2xl text-yellow-400 mb-2"></i>
+                        <div class="text-xs font-bold text-white">Live Reporting</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5">Parent real-time email alerts</div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center flex flex-col justify-center items-center">
+                        <i class="fa-solid fa-handshake text-2xl text-rose-400 mb-2"></i>
+                        <div class="text-xs font-bold text-white">District Ready</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5">SSO Integration options</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Explanatory Blocks -->
+                <div class="lg:col-span-8 space-y-6 reveal-right">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">
+                        Cultivating Career Certainty in an Anxious Era
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        We realize that leaving children or tech beginners unattended online presents substantial anxiety. Qubitex forms a structured cyber greenhouse ecosystem. There are zero external ads, zero predatory subscription metrics, and zero loose unscreened forums.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span> Modern Teaching Approach
+                            </h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Our educators blend expert industry engineering backgrounds with kid-friendly creative communication parameters.
+                            </p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span> Definitive Skill Outcomes
+                            </h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Students conclude tracks with fully public portfolio web links, verified cryptography logs, and budgeting worksheets.
+                            </p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Unshakeable Confidence Building
+                            </h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Overcoming complex algorithm friction boosts early self-efficacy, showing them they can master any tool.
+                            </p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Future Career Preparation
+                            </h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Early insights into deep-learning architecture and monetary discipline sets young learners decades ahead of peer groups.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-20 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center mb-12 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-purple-400 uppercase mb-2">Honest Feedback</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Endorsed by Real Parents, Students & Schools
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-teal-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Carousel Component Wrapper -->
+            <div class="relative max-w-4xl mx-auto reveal-up">
+                
+                <!-- Testimonials Container -->
+                <div id="testimonialContainer" class="flex transition-transform duration-500 ease-in-out gap-6 items-stretch">
+                    
+                    <!-- Card 1 -->
+                    <div class="w-full shrink-0 glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-200 text-sm sm:text-base italic leading-relaxed">
+                                "My 12-year-old daughter used to spend her weekends aimlessly browsing social media. After enrolling in Quantum Bit Exchange's AI for Beginners and Coding Fundamentals tracks, she built an automated script to catalog her monthly school piggy-bank goals! The practical analytical mindset is absolutely priceless."
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-teal-500 flex items-center justify-center font-bold text-white shadow-md text-sm">
+                                MK
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Meenakshi K.</h4>
+                                <p class="text-xs text-slate-400">Parent of 7th Grader • Bandra, Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="w-full shrink-0 glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between hidden">
+                        <div>
+                            <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-200 text-sm sm:text-base italic leading-relaxed">
+                                "As a senior school curriculum supervisor, setting up a coherent practical cybersecurity and zero-based financial budgeting module was tough. Quantum Bit Exchange provided the exact automated tools, Indian banking context drills, and real-time parent dashboards we required."
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white shadow-md text-sm">
+                                AS
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Amit Sharma</h4>
+                                <p class="text-xs text-slate-400">STEM Coordinator • Millennium Public Academies, New Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="w-full shrink-0 glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between hidden">
+                        <div>
+                            <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-200 text-sm sm:text-base italic leading-relaxed">
+                                "I loved the Smart Money Habits lab because it was completely actionable. We calculated real SIP interest ratios on local dashboards to see how impulse pocket-money spending hurts wealth accumulation over years. Now I budget everything!"
+                            </p>
+                        </div>
+                        <div class="mt-6 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-yellow-500 flex items-center justify-center font-bold text-white shadow-md text-sm">
+                                RV
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Rohan Varma</h4>
+                                <p class="text-xs text-slate-400">Student (Age 16) • Koramangala, Bengaluru</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls Button Links -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button onclick="prevTestimonial()" class="w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-white flex items-center justify-center hover:bg-slate-700 transition-colors focus:outline-none cursor-pointer" aria-label="Previous testimonial">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <div class="flex gap-1.5" id="carouselDots">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500 cursor-pointer" onclick="jumpToTestimonial(0)"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-600 cursor-pointer" onclick="jumpToTestimonial(1)"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-600 cursor-pointer" onclick="jumpToTestimonial(2)"></span>
+                    </div>
+                    <button onclick="nextTestimonial()" class="w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-white flex items-center justify-center hover:bg-slate-700 transition-colors focus:outline-none cursor-pointer" aria-label="Next testimonial">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="py-20 relative z-10 bg-slate-900/40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal-up">
+                <h2 class="text-xs font-bold tracking-widest text-teal-400 uppercase mb-2">Our Instructors</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Elite Brains Guided by Visionary Mentors
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-400 to-purple-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Team Responsive Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Member 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center group reveal-up">
+                    <div class="relative w-24 h-24 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-600 to-teal-400 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-extrabold text-xl text-white tracking-tighter">
+                            AK
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Anand Kulkarni</h3>
+                    <div class="text-[11px] font-mono text-teal-400 uppercase mt-0.5 tracking-wider">Founder & Tech Lead</div>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        IIT Bombay Alumnus, Former Senior Systems Lead at Silicon Valley labs. Deep tech architect passionate about active logic paradigms for Indian schools.
+                    </p>
+                    <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center group reveal-up" style="transition-delay: 100ms;">
+                    <div class="relative w-24 h-24 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-600 to-teal-400 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-extrabold text-xl text-white tracking-tighter">
+                            SC
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Sunita Choksi</h3>
+                    <div class="text-[11px] font-mono text-purple-400 uppercase mt-0.5 tracking-wider">Lead Financial Educator</div>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Chartered Accountant (CA) & IIM Ahmedabad graduate with 9+ years spent structuring retail investment guidelines and simplified money management habits.
+                    </p>
+                    <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center group reveal-up" style="transition-delay: 200ms;">
+                    <div class="relative w-24 h-24 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-600 to-teal-400 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-extrabold text-xl text-white tracking-tighter">
+                            KM
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Kabir Mehta</h3>
+                    <div class="text-[11px] font-mono text-teal-400 uppercase mt-0.5 tracking-wider">Cyber Shield Instructor</div>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Certified Ethical Hacker (CEH) and defense analyst. Designs secure local sandboxes and digital safety drills for school cohorts.
+                    </p>
+                    <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-teal-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center group reveal-up" style="transition-delay: 300ms;">
+                    <div class="relative w-24 h-24 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-purple-600 to-teal-400 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-extrabold text-xl text-white tracking-tighter">
+                            DI
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Divya Iyer</h3>
+                    <div class="text-[11px] font-mono text-purple-400 uppercase mt-0.5 tracking-wider">AI Pedagogy Mentor</div>
+                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                        Machine learning specialist with continuous focus on prompt systems. Turns complex model weights into bite-sized code logic tools.
+                    </p>
+                    <div class="flex items-center justify-center gap-3 mt-4 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT / ENROLLMENT SECTION -->
+    <section id="contact" class="py-20 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="glass-card rounded-3xl overflow-hidden shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Form Side -->
+                    <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 space-y-6 reveal-left">
+                        <div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Initialize Your Future Track</h2>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">Submit an inquiry and an admissions counselor will reach out within 12 business hours.</p>
+                        </div>
+
+                        <!-- Feedback Message Placeholder -->
+                        <div id="contactFeedback" class="hidden p-4 rounded-xl text-xs font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20"></div>
+
+                        <form id="qubitexContactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label for="contactName" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Your Name</label>
+                                    <input id="contactName" name="name" type="text" required placeholder="Alex Mercer" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
+                                </div>
+                                <div class="space-y-1">
+                                    <label for="contactEmail" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Email Address</label>
+                                    <input id="contactEmail" name="email" type="email" required placeholder="alex@domain.com" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label for="contactPhone" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Phone Number</label>
+                                    <input id="contactPhone" name="phone" type="tel" placeholder="+91 98765 43210" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
+                                </div>
+                                <div class="space-y-1">
+                                    <label for="contactProgram" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Primary Program Interest</label>
+                                    <select id="contactProgram" name="program" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-300 focus:outline-none focus:border-purple-500 transition-colors">
+                                        <option value="Comprehensive Hybrid Package">Comprehensive Hybrid Package</option>
+                                        <option value="Digital Tech & AI Fundamentals">Digital Tech & AI Fundamentals</option>
+                                        <option value="Smart Money & Budgeting Foundations">Smart Money & Budgeting Foundations</option>
+                                        <option value="Internet Cyber Safety">Internet Cyber Safety</option>
+                                        <option value="School / District Partnership">School / District Partnership</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="contactMessage" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Your Message / Learner Background</label>
+                                <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about the student's age, primary goals, or school framework requirements..." class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors resize-none"></textarea>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                                <button type="submit" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm rounded-xl btn-glow-teal cursor-pointer grow text-center flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane text-base"></i> Inquiry
+                                </button>
+                                <button type="button" onclick="openDemoModal('Schedule a Call — Quantum Bit Exchange')" class="px-4 py-3 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-teal-400 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer">
+                                    <i class="fa-solid fa-clock"></i> Schedule Call
+                                </button>
+                            </div>
+                            <p class="text-[10px] text-slate-500 leading-relaxed pt-1">
+                                <i class="fa-solid fa-circle-info mr-1 text-teal-400"></i> On submission, your details will be pre-filled in an email to our admissions team at <span class="text-emerald-400 font-bold">abc@gmail.com</span>. Just hit Send.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Infobox Illustration Placeholder Side -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-purple-950/30 to-slate-950/90 border-l border-slate-800 p-6 sm:p-10 flex flex-col justify-between reveal-right">
+                        <div class="space-y-6">
+                            <h3 class="text-lg font-bold text-white">Quantum Bit Exchange</h3>
+                            
+                            <div class="space-y-4 text-xs">
+                                <div class="flex gap-3">
+                                    <div class="text-purple-400 mt-0.5"><i class="fa-solid fa-location-dot"></i></div>
+                                    <p class="text-slate-300">408, EA-19, Fort, Mumbai- 20</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="text-teal-400 mt-0.5"><i class="fa-solid fa-envelope"></i></div>
+                                    <p class="text-slate-300">admissions@qubitex-edtech.io</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="text-yellow-400 mt-0.5"><i class="fa-solid fa-phone"></i></div>
+                                    <p class="text-slate-300">+91 9876543210</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mock map representation -->
+                        <div class="mt-8 relative w-full aspect-video bg-slate-900 rounded-xl border border-slate-800 overflow-hidden flex items-center justify-center p-4 text-center">
+                            <div class="absolute inset-0 tech-grid opacity-30"></div>
+                            <div class="absolute w-4 h-4 rounded-full bg-teal-400 animate-ping"></div>
+                            <div class="absolute w-2.5 h-2.5 rounded-full bg-teal-400 shadow-md"></div>
+                            <span class="text-[10px] text-slate-500 uppercase font-mono tracking-widest absolute bottom-2">Sat Satellite Navigation Active</span>
+                        </div>
+
+                        <div class="pt-6 border-t border-slate-800/80 mt-4 space-y-3">
+                            <p class="text-[11px] text-slate-400 leading-relaxed">
+                                <span class="text-white block font-bold mb-1"><i class="fa-solid fa-school text-teal-400 mr-1"></i> Academy & Institutional Hub</span>
+                                Need fast deployment answers for large academies? Request a sandbox trial token directly from our digital triage office.
+                            </p>
+                            <button onclick="openProviderModal()" class="w-full py-2.5 px-3 bg-gradient-to-r from-purple-900/40 to-slate-950 border border-purple-500/30 text-[11px] font-bold text-teal-400 rounded-xl hover:border-teal-400 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg group">
+                                <i class="fa-solid fa-key text-[10px] text-purple-400 group-hover:rotate-45 transition-transform"></i> Request Sandbox Trial Token
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 pt-16 pb-8 relative z-10 border-t border-slate-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                
+                <!-- Footer Info / Branding -->
+                <div class="md:col-span-4 space-y-4">
+                    <a href="#home" class="flex items-center gap-2 group">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-teal-400 flex items-center justify-center text-white text-sm shadow-md">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-white">Qub<span class="text-teal-400">itex</span></span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Qubitex delivers state-of-the-art gamified courses in code logic execution, safe web behavior parameters, foundational artificial intelligence prompts, and resilient personal wealth tactics.
+                    </p>
+                    <div class="flex items-center gap-3 text-slate-400 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors"><i class="fa-brands fa-youtube text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Links 1 -->
+                <div class="md:col-span-3 space-y-3 text-xs">
+                    <h4 class="text-sm font-bold text-white tracking-wide uppercase font-mono text-purple-400">Platform Syllabus</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#programs" class="hover:text-white transition-colors">Digital Technology Basics</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Cyber Threat Defenses</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Algorithmic Code Logic</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Generative Artificial Intelligence</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Smart Money Habits & Saving</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Quick Links 2 -->
+                <div class="md:col-span-2 space-y-3 text-xs">
+                    <h4 class="text-sm font-bold text-white tracking-wide uppercase font-mono text-teal-400">Navigation</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home Base</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Innovations</a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors">Ongoing Projects</a></li>
+                        <li><a href="#parents" class="hover:text-white transition-colors">For Parents Hub</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Legal Info -->
+                <div class="md:col-span-3 space-y-3 text-xs">
+                    <h4 class="text-sm font-bold text-white tracking-wide uppercase font-mono text-yellow-400">Trust Frameworks</h4>
+                    <p class="text-slate-400 leading-relaxed">
+                        Authorized continuous training framework compliance logs. Fully COPPA compliant. Encryption protocols audited yearly.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-mono">
+                        Server Node Ref: <span class="text-emerald-400 font-bold">QB-USA-MAIN-99</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Gradient Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+
+            <!-- Bottom Copyright bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+                <div>&copy; 2026 Qubitex Labs Inc. All rights reserved around the biosphere.</div>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-300 transition-colors">Privacy Paradigm</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Terms of Vector</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Cookie Vault</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE POPUP MODAL FOR "BOOK A DEMO" & QUICK NOTIFICATION TOKENS -->
+    <div id="demoModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xl z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300 opacity-0">
+        <div class="glass-card w-full max-w-md rounded-2xl p-6 relative space-y-4 text-left">
+            <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors text-lg focus:outline-none cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <div>
+                    <h3 id="demoModalTitle" class="text-lg font-bold text-white">Book a Demo</h3>
+                    <p id="demoModalSubtitle" class="text-xs text-slate-400">Fill in the details and we'll reach out to you shortly.</p>
+                </div>
+            </div>
+
+            <div id="modalFeedback" class="hidden p-3 rounded-lg bg-teal-500/10 text-teal-400 text-xs font-semibold"></div>
+
+            <form id="demoModalForm" onsubmit="handleDemoSubmit(event)" class="space-y-3">
+                <div class="space-y-1">
+                    <label for="demoName" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Your Name</label>
+                    <input id="demoName" type="text" required placeholder="e.g. Alex Mercer" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+                </div>
+
+                <div class="space-y-1">
+                    <label for="demoAge" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Student / Applicant Age</label>
+                    <input id="demoAge" type="text" required placeholder="e.g. 11 years old / Beginner adult" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="demoDateTime" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Preferred Date & Time</label>
+                    <input id="demoDateTime" type="datetime-local" required class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:outline-none focus:border-purple-500">
+                </div>
+
+                <div class="space-y-1">
+                    <label for="demoEmail" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Contact Email</label>
+                    <input id="demoEmail" type="email" required placeholder="parent@service.com" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+                </div>
+
+                 <div id="demoProgramContainer" class="space-y-1">
+                    <label for="demoProgram" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Program Interest</label>
+                    <select id="demoProgram" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:outline-none focus:border-purple-500">
+                        <option value="Digital Basics">Digital Basics</option>
+                        <option value="Internet Safety">Internet Safety</option>
+                        <option value="Coding Fundamentals">Coding Fundamentals</option>
+                        <option value="AI for Beginners">AI for Beginners</option>
+                        <option value="Smart Money Habits">Smart Money Habits</option>
+                        <option value="Budgeting and Saving">Budgeting and Saving</option>
+                        <option value="Digital Payments">Digital Payments</option>
+                        <option value="Career Readiness">Career Readiness</option>
+                        <option value="Foundation Workshop (Std 6-8)">Foundation Workshop (Std 6-8)</option>
+                        <option value="Launchpad Workshop (Std 9-12)">Launchpad Workshop (Std 9-12)</option>
+                        <option value="Digital Literacy Starter Track">Digital Literacy Starter Track</option>
+                        <option value="Personal Finance Foundations">Personal Finance Foundations</option>
+                        <option value="Safe Internet Explorer Program">Safe Internet Explorer Program</option>
+                        <option value="AI & Future Skills Lab">AI & Future Skills Lab</option>
+                        <option value="Smart Spending Challenge">Smart Spending Challenge</option>
+                    </select>
+                </div>
+
+                <div class="pt-2 flex gap-2">
+                    <button type="button" onclick="closeDemoModal()" class="w-1/2 text-center py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-1/2 text-center py-2.5 bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-xs font-bold rounded-lg btn-glow-teal cursor-pointer flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-paper-plane text-sm"></i> Submit Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- DETAILED PROGRAM MULTI-MODULE DETAILED OVERLAY POPUP -->
+    <div id="programModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xl z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300 opacity-0">
+        <div class="glass-card w-full max-w-lg rounded-3xl p-6 sm:p-8 relative space-y-4 text-left max-h-[85vh] overflow-y-auto">
+            <button onclick="closeProgramModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors text-xl focus:outline-none cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-4">
+                <div id="modalProgIcon" class="w-14 h-14 rounded-2xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-2xl shrink-0 border border-purple-500/20">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                    <div id="modalProgBadge" class="text-[10px] font-mono uppercase tracking-wider text-teal-400 font-bold bg-teal-400/10 px-2 py-0.5 rounded-md inline-block mb-1">Curriculum Breakdown</div>
+                    <h3 id="modalProgTitle" class="text-xl sm:text-2xl font-extrabold text-white">Program Title</h3>
+                </div>
+            </div>
+
+            <p id="modalProgDesc" class="text-slate-300 text-xs sm:text-sm leading-relaxed"></p>
+
+            <div class="space-y-2 pt-1">
+                <h4 class="text-xs uppercase font-mono text-slate-400 tracking-wider font-bold"><i class="fa-solid fa-circle-nodes text-purple-400 mr-1"></i> Core Sub-Module Syllabus lessons:</h4>
+                <div id="modalProgList" class="bg-slate-950/50 rounded-2xl border border-slate-800 p-4 space-y-3 text-xs sm:text-sm text-slate-300">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+
+            <div class="pt-3 flex flex-col sm:flex-row gap-3">
+                <button onclick="closeProgramModal()" class="px-5 py-3 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 text-xs font-semibold rounded-xl transition-colors cursor-pointer text-center">
+                    Close Syllabus
+                </button>
+                <button id="modalProgCTA" class="px-5 py-3 bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white text-xs font-bold rounded-xl btn-glow-purple cursor-pointer grow text-center flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-calendar-check text-sm"></i> Book Demo for this Program
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACADEMY SERVICE PROVIDER SANDBOX MODAL -->
+    <div id="providerModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xl z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300 opacity-0">
+        <div class="glass-card w-full max-w-md rounded-2xl p-6 sm:p-8 relative space-y-4 text-left">
+            <button onclick="closeProviderModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors text-lg focus:outline-none cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-600/20 text-teal-400 border border-teal-500/20 flex items-center justify-center text-lg shrink-0">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Request Sandbox Trial Token</h3>
+                    <p class="text-xs text-slate-400">Institutional Service Provider Triage Node</p>
+                </div>
+            </div>
+
+            <form id="providerModalForm" onsubmit="handleProviderSubmit(event)" class="space-y-3">
+                <div class="space-y-1">
+                    <label for="providerAcademy" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Academy / School Name</label>
+                    <input id="providerAcademy" type="text" required placeholder="Vanguard STEM Academy" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label for="providerSeats" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Expected Student Seats</label>
+                        <select id="providerSeats" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:outline-none focus:border-purple-500">
+                            <option value="50-200 Learners">50 - 200 Learners</option>
+                            <option value="200-1000 Learners">200 - 1000 Learners</option>
+                            <option value="1000+ Institutional Seats">1000+ Enterprise Seats</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label for="providerEnv" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Sandbox Pipeline</label>
+                        <select id="providerEnv" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:outline-none focus:border-purple-500">
+                            <option value="Cloud Managed Sandbox">Cloud Hosted Sandbox</option>
+                            <option value="On-Premise API Integration">On-Premises Local API</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label for="providerEmail" class="text-[10px] font-mono uppercase font-bold text-slate-400 block">Official Administrator Email</label>
+                    <input id="providerEmail" type="email" required placeholder="admin@vanguard.edu" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+                </div>
+
+                <div class="pt-2 flex gap-2">
+                    <button type="button" onclick="closeProviderModal()" class="w-1/3 text-center py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer">
+                        Dismiss
+                    </button>
+                    <button type="submit" class="w-2/3 text-center py-2.5 bg-gradient-to-r from-teal-600 to-purple-600 text-white text-xs font-bold rounded-lg btn-glow-teal cursor-pointer flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-key"></i> Generate Token Payload
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CORE INTERACTION JAVASCRIPT -->
+    <script>
+        // 1. Particle Canvas Network Animation
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 45;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 1.8 + 0.5;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.color = Math.random() > 0.5 ? '#7C3AED' : '#14B8A6';
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw interactive lines between close nodes
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - distance / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+
+        // 2. Dark / Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleIcon = document.getElementById('themeToggleIcon');
+
+        function applyTheme(theme) {
+            const isLight = theme === 'light';
+            document.body.classList.toggle('light-mode', isLight);
+            document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+
+            if (themeToggle && themeToggleIcon) {
+                themeToggle.setAttribute('aria-pressed', String(isLight));
+                themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+                themeToggleIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
+            }
+
+            localStorage.setItem('qbe-theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('qbe-theme');
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        applyTheme(savedTheme || (prefersLight ? 'light' : 'dark'));
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+                applyTheme(nextTheme);
+            });
+        }
+
+
+        // 3. Sticky Navbar Blur & Behavior on Scroll
+        const mainHeader = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                mainHeader.classList.add('glass-nav', 'shadow-xl');
+                mainHeader.classList.remove('py-4');
+                mainHeader.classList.add('py-2');
+            } else {
+                mainHeader.classList.remove('glass-nav', 'shadow-xl');
+                mainHeader.classList.remove('py-2');
+                mainHeader.classList.add('py-4');
+            }
+        });
+
+
+        // 3. Mobile App-Like Bottom Navigation Tab State Highlight
+        const mobileTabs = document.querySelectorAll('.mobile-tab-item');
+        
+        mobileTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                mobileTabs.forEach(t => {
+                    t.classList.remove('text-teal-400');
+                    t.classList.add('text-slate-400');
+                });
+                this.classList.remove('text-slate-400');
+                this.classList.add('text-teal-400');
+            });
+        });
+
+        // Advanced Scroll-Spy Integration: Tracks visible viewport sections and lights up the mobile nav tabs dynamically
+        const spySections = ['home', 'programs', 'projects', 'contact'];
+        const spyOptions = { root: null, threshold: 0.35, rootMargin: '0px' };
+
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    mobileTabs.forEach(t => {
+                        if (t.getAttribute('href') === `#${id}`) {
+                            t.classList.remove('text-slate-400');
+                            t.classList.add('text-teal-400');
+                        } else {
+                            t.classList.remove('text-teal-400');
+                            t.classList.add('text-slate-400');
+                        }
+                    });
+                }
+            });
+        }, spyOptions);
+
+        spySections.forEach(secId => {
+            const el = document.getElementById(secId);
+            if (el) spyObserver.observe(el);
+        });
+
+
+        // 4. Reveal Animations using Intersection Observer API
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we don't necessarily need to track it again
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Query all required animated containers
+        document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .scale-in').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+
+        // 5. Testimonial Sliding Component Logic
+        let activeTestimonialIndex = 0;
+        const testimonialCards = document.querySelectorAll('#testimonialContainer > div');
+        const dots = document.querySelectorAll('#carouselDots > span');
+
+        function updateTestimonialDisplay() {
+            testimonialCards.forEach((card, index) => {
+                if (index === activeTestimonialIndex) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Update status dots indicators
+            dots.forEach((dot, index) => {
+                if (index === activeTestimonialIndex) {
+                    dot.className = "w-2.5 h-2.5 rounded-full bg-purple-500 cursor-pointer";
+                } else {
+                    dot.className = "w-2.5 h-2.5 rounded-full bg-slate-600 cursor-pointer";
+                }
+            });
+        }
+
+        function nextTestimonial() {
+            activeTestimonialIndex = (activeTestimonialIndex + 1) % testimonialCards.length;
+            updateTestimonialDisplay();
+        }
+
+        function prevTestimonial() {
+            activeTestimonialIndex = (activeTestimonialIndex - 1 + testimonialCards.length) % testimonialCards.length;
+            updateTestimonialDisplay();
+        }
+
+        function jumpToTestimonial(idx) {
+            activeTestimonialIndex = idx;
+            updateTestimonialDisplay();
+        }
+
+
+        // 6. Modal Operations for Book Demo with Dynamic Program Pre-selection
+        const demoModal = document.getElementById('demoModal');
+        const modalFeedback = document.getElementById('modalFeedback');
+        let activeSelectedProgramContext = "Quantum Bit Exchange"; // Default fallback
+
+        function openDemoModal(context) {
+            // Set contextual title & subtitle based on where it was triggered from
+            const titleEl = document.getElementById('demoModalTitle');
+            const subtitleEl = document.getElementById('demoModalSubtitle');
+            const progContainer = document.getElementById('demoProgramContainer');
+            
+            if (context) {
+                titleEl.textContent = context;
+                subtitleEl.textContent = `Complete the details for your ${activeSelectedProgramContext} request.`;
+            } else {
+                titleEl.textContent = `Book a Demo — ${activeSelectedProgramContext}`;
+                subtitleEl.textContent = 'Fill in the details and we\'ll reach out to you shortly.';
+            }
+
+            // Hide Program Interest selector if it is an enrollment or specific program request to remove redundancy
+            if (pendingEnrollmentCountId || (context && context.includes('Book Demo'))) {
+                if (progContainer) progContainer.style.display = 'none';
+            } else {
+                if (progContainer) progContainer.style.display = 'block';
+            }
+
+            demoModal.classList.remove('hidden');
+            setTimeout(() => {
+                demoModal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeDemoModal() {
+            demoModal.classList.remove('opacity-100');
+            setTimeout(() => {
+                demoModal.classList.add('hidden');
+                modalFeedback.classList.add('hidden');
+                document.getElementById('demoModalForm').reset();
+                const progContainer = document.getElementById('demoProgramContainer');
+                if (progContainer) progContainer.style.display = 'block';
+                activeSelectedProgramContext = "Quantum Bit Exchange";
+                pendingEnrollmentCountId = null;
+            }, 300);
+        }
+
+        // Fired when clicking specific Curriculum Course "View →" cards
+        function bookDemoForProgram(programName) {
+            activeSelectedProgramContext = programName;
+            openDemoModal(`Book Demo — ${programName}`);
+        }
+
+        function handleDemoSubmit(e) {
+            e.preventDefault();
+
+            // Fetch all form fields
+            const name = document.getElementById('demoName').value.trim();
+            const age = document.getElementById('demoAge').value.trim();
+            const dateTimeInput = document.getElementById('demoDateTime').value;
+            const userEmail = document.getElementById('demoEmail').value.trim();
+            const programInterest = document.getElementById('demoProgram').value;
+
+            if (!dateTimeInput) {
+                alert("Please select a valid date and time.");
+                return;
+            }
+
+            // Format date/time for display
+            const startDate = new Date(dateTimeInput);
+            const formattedDate = startDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            const formattedTime = startDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+            const isEnrollment = !!pendingEnrollmentCountId;
+            const targetEmail = 'abc@gmail.com';
+            const whatsappNumber = '919876543210';
+
+            if (isEnrollment) {
+                // ── ENROLLMENT PATH → Opens Email Client with all details prefilled ──
+                const emailSubject = `Enrollment Request — ${activeSelectedProgramContext}`;
+                const emailBody =
+`Hello Quantum Bit Exchange,
+
+I would like to enroll in the following program:
+
+Program: ${activeSelectedProgramContext}
+Program Interest: ${programInterest}
+Student Name: ${name}
+Student Age: ${age}
+Preferred Date: ${formattedDate}
+Preferred Time: ${formattedTime}
+Contact Email: ${userEmail}
+
+Please confirm my enrollment and share further details.
+
+Thank you.
+${name}`;
+
+                const mailtoURL = `mailto:${targetEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+                // Show feedback
+                modalFeedback.innerHTML = `<i class="fa-solid fa-envelope text-teal-400 mr-1"></i> Opening your email app to send the <strong>${activeSelectedProgramContext}</strong> enrollment request...`;
+                modalFeedback.classList.remove('hidden');
+
+                setTimeout(() => {
+                    window.location.href = mailtoURL;
+
+                    // Deferred enrollment count increment
+                    const countEl = document.getElementById(pendingEnrollmentCountId);
+                    if (countEl) {
+                        let current = parseInt(countEl.textContent, 10);
+                        if (!isNaN(current)) {
+                            countEl.textContent = current + 1;
+                            countEl.classList.add('text-teal-400', 'scale-125', 'font-bold');
+                            setTimeout(() => {
+                                countEl.classList.remove('scale-125', 'font-bold');
+                            }, 500);
+                        }
+                    }
+                    pendingEnrollmentCountId = null;
+                    closeDemoModal();
+                }, 1200);
+
+            } else {
+                // ── GENERAL DEMO PATH → Opens Email with all details prefilled ──
+                const emailSubject = `Demo Request — ${activeSelectedProgramContext}`;
+                const emailBody =
+`Hello Quantum Bit Exchange,
+
+I would like to book a demo for the following program:
+
+Program: ${activeSelectedProgramContext}
+Program Interest: ${programInterest}
+Name: ${name}
+Student Age: ${age}
+Preferred Date: ${formattedDate}
+Preferred Time: ${formattedTime}
+Contact Email: ${userEmail}
+
+Please share the demo schedule and further details.
+
+Thank you.
+${name}`;
+
+                const mailtoURL = `mailto:${targetEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+                modalFeedback.innerHTML = `<i class="fa-solid fa-envelope text-teal-400 mr-1"></i> Opening your email app to send your <strong>${activeSelectedProgramContext}</strong> demo request...`;
+                modalFeedback.classList.remove('hidden');
+
+                setTimeout(() => {
+                    window.location.href = mailtoURL;
+                    closeDemoModal();
+                }, 1200);
+            }
+        }
+
+        // 6b. Curriculum Program Modal Mapping Dataset
+        const programData = {
+            'foundation-workshop': {
+                title: 'Foundation Workshop (Std 6-8)',
+                badge: 'Ages 11-14 • 10 Days Mastery',
+                icon: '<i class="fa-solid fa-graduation-cap"></i>',
+                desc: 'Build Your Digital Superpowers! This comprehensive 10-day sprint is customized to introduce middle school students to active computational thinking, digital licenses, creative prompt design, password fortification, and interactive compound interest labs.',
+                lessons: [
+                    '<strong>Day 1: Digital License</strong> — Internet Driver\'s Test, Avatar Identity vs Real Safety, & Cyberbully Deflection',
+                    '<strong>Day 2: AI Sidekick Training</strong> — "Magic Prompt Spells", Story/Visual Co-creation, & Hallucination Detective Game',
+                    '<strong>Day 3: Cyber Guardian</strong> — Password Fortress Crafting, Phishing Tank Sort Game, & 2FA Shield Setup',
+                    '<strong>Day 4: Creator Studio</strong> — Visual Poster Engineering (Canva), Stop Motion Intros, & Copyright Basics',
+                    '<strong>Day 5: Logic & Code Quest</strong> — Scratch Game Jam, Human Robot Unplugged Sequences, & Debugging Relay Sprints',
+                    '<strong>Day 6: Money Psychology</strong> — Needs vs Wants Auctions, Ad Dopamine Traps, & The 3-Jar System (Spend/Save/Give)',
+                    '<strong>Day 7: Budget Simulation</strong> — Dream Birthday Plan, Multi-Variable Grocery Challenge, & Emergency Fund Jar Craft',
+                    '<strong>Day 8: Banking Security</strong> — Mock Branch Banking Roles, UPI Secure Drill Sprints, & Compound Interest Trees',
+                    '<strong>Day 9: Investor Playground</strong> — Business Owner Simulator, Stock Candy Shops, & Pizza Diversification Crafts',
+                    '<strong>Day 10: Showcase Carnival</strong> — Parent Expo Exhibitions, Scratch Arcade Stalls, Password Testing & Badges'
+                ]
+            },
+            'launchpad-workshop': {
+                title: 'Launchpad Workshop (Std 9-12)',
+                badge: 'Ages 14-18 • 10 Days Deep Work',
+                icon: '<i class="fa-solid fa-rocket"></i>',
+                desc: 'Build Your Unfair Advantage. A rigorous professional bootcamp designed for high-school students to build a public technical portfolio, master advanced automated workflows, build rent/tax models in Excel, and deliver dynamic venture proposals.',
+                lessons: [
+                    '<strong>Day 1: Brand Engineering</strong> — Digital Footprint Audit, LinkedIn Architecture & Carrd/Notion Portfolio Setup',
+                    '<strong>Day 2: AI Productivity Stack</strong> — The C.R.E.A.T.E Prompt Framework, Automated Research Engines, & Integrity Guidelines',
+                    '<strong>Day 3: Security Architecture</strong> — Bitwarden Deployment, Red-Team Social Engineering Simulation, & Operational Hygiene Checklists',
+                    '<strong>Day 4: Media Production</strong> — Advanced CapCut Video Timelines, Personal Brand Kit Identity, & Content Monetization Cycles',
+                    '<strong>Day 5: Builder Sprint</strong> — Python Syntax Basics inside Replit, Zapier/IFTTT automation pipelines, & GitHub Repositories',
+                    '<strong>Day 6: Behavioral Finance</strong> — Cognitive Loss Aversion Biases, Zero-Based Budgeting Frameworks, & Tax Architecture Basics',
+                    '<strong>Day 7: Life Simulator 2030</strong> — Random Career/City Matrix Assignment, Excel Rent/EMI Models, & Budget Negotiations',
+                    '<strong>Day 8: Financial Systems</strong> — Demat Live Portfolios, UPI Token Deep Dives, & Credit Score Optimization Games (CIBIL Logic)',
+                    '<strong>Day 9: Investment Lab</strong> — ETF Analysis, SIP Compound Interest Battles, & Crypto/DeFi Risk Minimization Metrics',
+                    '<strong>Day 10: Summit Finale</strong> — Shark Tank Ventures Pitches, Alumni Networks, Digital Verified Badges & Networking Mixer'
+                ]
+            },
+            'digital-basics': {
+                title: 'Digital Basics',
+                badge: 'Absolute Beginner • 4 Modules',
+                icon: '<i class="fa-solid fa-laptop-code"></i>',
+                desc: 'Master the absolute structural core of contemporary technology. This track prepares newcomers for complex networks by providing deep confidence over physical system architectures, filesystems, and distributed architectures.',
+                lessons: [
+                    '<strong>Module 1:</strong> Silicon & Hardware Systems Architecture Fundamentals',
+                    '<strong>Module 2:</strong> Cloud Storage Architecture & Virtual Multi-tenant Storage',
+                    '<strong>Module 3:</strong> Operating System Kernel Navigation & File Management Protocols',
+                    '<strong>Module 4:</strong> Hypertext Secure Protocols, Local Ports & Browser Architecture Basics'
+                ]
+            },
+            'internet-safety': {
+                title: 'Internet Safety',
+                badge: 'All Audiences • 5 Modules',
+                icon: '<i class="fa-solid fa-user-shield"></i>',
+                desc: 'Become entirely bulletproof online. This course equips learners with specialized defensive routines to easily spot complex automated fraud vectors, prevent persistent cross-site tracking, and maintain airtight personal data privacy pools.',
+                lessons: [
+                    '<strong>Module 1:</strong> Advanced Phishing Traps, Spear-Scam Analysis & Spoof Recognition',
+                    '<strong>Module 2:</strong> Cryptographic Entropy & High-Security Password Vault Systems',
+                    '<strong>Module 3:</strong> Erasing and Minimizing Your Permanent Online Digital Footprint',
+                    '<strong>Module 4:</strong> Two-Factor Multi-Tier Hardware Authentication Setup Processes',
+                    '<strong>Module 5:</strong> Digital Netiquette & Malicious Cyberbully Deflection Frameworks'
+                ]
+            },
+            'coding-fundamentals': {
+                title: 'Coding Fundamentals',
+                badge: 'Beginner - Intermediate • 8 Modules',
+                icon: '<i class="fa-solid fa-code"></i>',
+                desc: 'The gold standard baseline for pure algorithmic calculation. Learn how instructions communicate with computing modules using variables, logic trees, data collections, and error debugging protocols.',
+                lessons: [
+                    '<strong>Module 1:</strong> Algorithmic Variables, Data Types & Primitive Memory Allocations',
+                    '<strong>Module 2:</strong> Conditional Logic Strings & Comprehensive If-Else Branched Execution Paths',
+                    '<strong>Module 3:</strong> While and For Loops Sandbox Iteration Mastery & Counter Cycles',
+                    '<strong>Module 4:</strong> Functions, Scope Chaining & Modular Code Architecture Principles',
+                    '<strong>Module 5:</strong> Data Collections: Primitive Array Matrices & Object Storage Keys',
+                    '<strong>Module 6:</strong> String Manipulation, Regular Expression Pattern Matching & Template Literals',
+                    '<strong>Module 7:</strong> Asynchronous Logic, Promise Chains & Event Loop Scheduling Fundamentals',
+                    '<strong>Module 8:</strong> Compiling, Runtime Tracing & Debugging Terminal Console Outputs'
+                ]
+            },
+            'ai-beginners': {
+                title: 'AI for Beginners',
+                badge: 'Futuristic • 6 Modules',
+                icon: '<i class="fa-solid fa-microchip"></i>',
+                desc: 'Demystify artificial intelligence and make it your permanent operational superpower. This program teaches the core principles behind Large Language Models, prompt crafting, token weights, and secure machine interactions.',
+                lessons: [
+                    '<strong>Module 1:</strong> Core Token Logic & Neural Attention Parameter Weights',
+                    '<strong>Module 2:</strong> Advanced Multi-Shot Prompt Tuning & Chain-of-Thought Framing',
+                    '<strong>Module 3:</strong> Spotting Synthetic Hallucinations & Verifying Source Evidence Logs',
+                    '<strong>Module 4:</strong> Context Window Management, Temperature Controls & Sampling Strategies',
+                    '<strong>Module 5:</strong> Building Custom AI Agent Pipelines with Tool Use & Function Calling',
+                    '<strong>Module 6:</strong> No-Code Creative Automation Workflows & Responsible AI Ethics Frameworks'
+                ]
+            },
+            'smart-money': {
+                title: 'Smart Money Habits',
+                badge: 'Core Life Skill • 4 Modules',
+                icon: '<i class="fa-solid fa-hand-holding-dollar"></i>',
+                desc: 'Re-engineer your psychological relationship with currency. Learn the core secrets of asset production, understand the heavy friction of debt interest rates, and build unshakeable delayed gratification loops.',
+                lessons: [
+                    '<strong>Module 1:</strong> Explicit Assets vs Liabilities Breakdown & Cashflow Vectoring',
+                    '<strong>Module 2:</strong> The Exponential Math of Compound Yield Dividends over Sprints',
+                    '<strong>Module 3:</strong> Psychological Impulse Control & The Delayed Gratification Loop',
+                    '<strong>Module 4:</strong> Opportunity Costs Modeling in Everyday Commercial Decisions'
+                ]
+            },
+            'budgeting-saving': {
+                title: 'Budgeting and Saving',
+                badge: 'Practical Sandbox • 5 Modules',
+                icon: '<i class="fa-solid fa-piggy-bank"></i>',
+                desc: 'Take complete strategic control over your resources. Through real-time terminal spreadsheet sandboxes, students learn how to structure automated emergency reserves and trim hidden continuous cash drains.',
+                lessons: [
+                    '<strong>Module 1:</strong> Formulating the 50/30/20 Budget Matrix across Micro-cohorts',
+                    '<strong>Module 2:</strong> Envelope Tracking Systems & Physical Cashflow Compartmentalization',
+                    '<strong>Module 3:</strong> Auditing Hidden Variable Subscriptions & Perpetual Micro-transactions',
+                    '<strong>Module 4:</strong> Compound Interest Modeling & High-Yield Savings Account Optimization',
+                    '<strong>Module 5:</strong> Designing Automated Emergency Capital Sinks & Protection Reserves'
+                ]
+            },
+            'digital-payments': {
+                title: 'Digital Payments',
+                badge: 'Intermediate Tech • 6 Modules',
+                icon: '<i class="fa-solid fa-credit-card"></i>',
+                desc: 'Navigate modern cashless economies with absolute confidence. Gain thorough visibility into modern encrypted payment links, blockchain records, decentralized wallets, and distributed transaction protocols.',
+                lessons: [
+                    '<strong>Module 1:</strong> Peer-to-Peer Gateway Encryption Links & Clearing House Settlement Cycles',
+                    '<strong>Module 2:</strong> Digital Wallet Architecture: UPI, NFC Tap & QR Code Transaction Protocols',
+                    '<strong>Module 3:</strong> Decentralized Blockchain Ledgers & Smart Gas Token Logic Basics',
+                    '<strong>Module 4:</strong> Cryptocurrency Wallet Key Management: Public, Private & Seed Phrase Security',
+                    '<strong>Module 5:</strong> Evading Online Transaction Phishing, Malicious Smart Contracts & Vault Protection',
+                    '<strong>Module 6:</strong> International Remittance Rails, Cross-Border Gateways & Compliance Frameworks'
+                ]
+            },
+            'career-readiness': {
+                title: 'Career Readiness',
+                badge: 'Advanced Hub • 7 Modules',
+                icon: '<i class="fa-solid fa-briefcase"></i>',
+                desc: 'Launch yourself directly into high-leverage modern workspaces. Build beautiful public web portfolios, master distributed asynchronous tech tools, and acquire professional project pitching protocols.',
+                lessons: [
+                    '<strong>Module 1:</strong> Deploying Live Portfolios via GitHub Pages & Custom Domain Configuration',
+                    '<strong>Module 2:</strong> Asynchronous Toolkit Mastery (Git Branching, Markdown Docs, CI/CD Pipelines)',
+                    '<strong>Module 3:</strong> Remote Collaboration Fluency: Slack, Notion, Jira & Distributed Sprint Rituals',
+                    '<strong>Module 4:</strong> Personal Branding: LinkedIn Optimization, Digital Presence & Network Architecture',
+                    '<strong>Module 5:</strong> Professional Resume Crafting & ATS-Friendly Document Formatting Protocols',
+                    '<strong>Module 6:</strong> Pitching High-Value Solutions in an AI-Driven Marketplace Ecosystem',
+                    '<strong>Module 7:</strong> Freelancing Ethics, Contract Negotiations & Client Communication Frameworks'
+                ]
+            }
+        };
+
+        function openProgramModal(slug) {
+            const data = programData[slug];
+            if (!data) return;
+
+            // Populate text elements dynamically
+            document.getElementById('modalProgIcon').innerHTML = data.icon;
+            document.getElementById('modalProgBadge').textContent = data.badge;
+            document.getElementById('modalProgTitle').textContent = data.title;
+            document.getElementById('modalProgDesc').textContent = data.desc;
+
+            // Render syllabus bullet lessons
+            const listContainer = document.getElementById('modalProgList');
+            listContainer.innerHTML = '';
+            data.lessons.forEach(lesson => {
+                const li = document.createElement('div');
+                li.className = 'flex items-start gap-2.5 py-1 border-b border-slate-900/40 last:border-0';
+                li.innerHTML = `<span class="text-teal-400 mt-0.5"><i class="fa-solid fa-check-double text-xs"></i></span> <span>${lesson}</span>`;
+                listContainer.appendChild(li);
+            });
+
+            // Configure the footer button to open the calendar demo modal pre-filled with this program name context
+            const ctaBtn = document.getElementById('modalProgCTA');
+            ctaBtn.onclick = function() {
+                closeProgramModal();
+                bookDemoForProgram(data.title);
+            };
+
+            // Animate popup reveal visibility safely
+            const modal = document.getElementById('programModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeProgramModal() {
+            const modal = document.getElementById('programModal');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+
+        // 7. Contact Form -> Email Auto-Forward Handler
+        // Submits all form details via prefilled email to abc@gmail.com
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            // Capture all field inputs
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim() || 'Not Provided';
+            const program = document.getElementById('contactProgram').value;
+            const message = document.getElementById('contactMessage').value.trim() || 'No additional message provided.';
+
+            // Construct beautifully formatted WhatsApp message
+            const whatsappMessage = 
+`*🚀 New Quantum Bit Exchange Inquiry*
+
+*👤 Name:* ${name}
+*📧 Email:* ${email}
+*📱 Phone:* ${phone}
+*🎓 Program Interest:* ${program}
+
+*💬 Message:*
+${message}
+
+_Sent via Quantum Bit Exchange Website_`;
+
+            // Encode for URL safety
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp business number (international format without + or spaces)
+            const whatsappNumber = '919876543210';
+            
+            // Build the WhatsApp URL (wa.me works on both desktop & mobile)
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Show user feedback before redirect
+            const feedback = document.getElementById('contactFeedback');
+            feedback.innerHTML = '<i class="fa-brands fa-whatsapp text-base mr-1"></i> Redirecting you to WhatsApp to deliver your inquiry to our admissions team...';
+            feedback.classList.remove('hidden');
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Open WhatsApp in a new tab/window
+            window.open(whatsappURL, '_blank');
+
+            // Reset the form after redirect for clean state
+            setTimeout(() => {
+                event.target.reset();
+            }, 800);
+        }
+
+        // Increments the enrollment count for the chosen project track dynamically by +1
+        // Stores the pending enrollment count element ID until user confirms the slot
+        let pendingEnrollmentCountId = null;
+
+        function enrollProject(projectName, countId) {
+            // Store the target count element ID for deferred increment upon confirmation
+            pendingEnrollmentCountId = countId;
+
+            // Set the active program context
+            activeSelectedProgramContext = projectName;
+
+            // Open the modal with contextual title
+            openDemoModal(`Enroll — ${projectName}`);
+
+            const feedback = document.getElementById('modalFeedback');
+            feedback.innerHTML = `<i class="fa-solid fa-lock text-yellow-400 mr-1"></i> Enrollment form for: <strong>${projectName}</strong>. Fill details and hit submit.`;
+            feedback.classList.remove('hidden');
+        }
+
+        // 8. Academy Service Provider Sandbox Token Handlers
+        const providerModal = document.getElementById('providerModal');
+
+        function openProviderModal() {
+            providerModal.classList.remove('hidden');
+            setTimeout(() => {
+                providerModal.classList.add('opacity-100');
+            }, 10);
+        }
+
+        function closeProviderModal() {
+            providerModal.classList.remove('opacity-100');
+            setTimeout(() => {
+                providerModal.classList.add('hidden');
+                document.getElementById('providerModalForm').reset();
+            }, 300);
+        }
+
+        function handleProviderSubmit(event) {
+            event.preventDefault();
+
+            // Extract provider field entries
+            const academy = document.getElementById('providerAcademy').value.trim();
+            const seats = document.getElementById('providerSeats').value;
+            const env = document.getElementById('providerEnv').value;
+            const adminEmail = document.getElementById('providerEmail').value.trim();
+
+            // Format a highly specialized enterprise token application payload
+            const providerPayload = 
+`*🔐 QUANTUM BIT EXCHANGE — INSTITUTIONAL SANDBOX REQUEST*
+
+*🏫 Academy Name:* ${academy}
+*👥 Volume Tier:* ${seats}
+*🎛️ Pipeline Infra:* ${env}
+*🔑 Admin Email:* ${adminEmail}
+
+_Requesting cryptographic trial token key generation for distributed student sandbox access points._`;
+
+            const encodedPayload = encodeURIComponent(providerPayload);
+            const targetWhatsApp = "919876543210"; // Updated phone destination variable
+            const providerRedirectUrl = `https://wa.me/${targetWhatsApp}?text=${encodedPayload}`;
+
+            // Trigger window redirect token pipeline
+            window.open(providerRedirectUrl, '_blank');
+            closeProviderModal();
+        }
+    </script>
+</body>
+</html>
