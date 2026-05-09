@@ -38,7 +38,7 @@
         }
         @media (max-width: 767px) {
             body { padding-bottom: 76px; }
-            .container { padding-left: 12px; padding-right: 12px; }
+            .container { padding-left: 20px !important; padding-right: 20px !important; }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -511,10 +511,35 @@
 
     <!-- HEADER / NAVBAR -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainHeader">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#home" class="text-xl sm:text-2xl font-extrabold tracking-tight text-white focus:outline-none">
-                Qubitex
+        <nav class="container mx-auto px-5 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3">
+            <!-- Logo: Microchip + Atom (Quantum Computing Aesthetic) -->
+            <a href="#home" class="flex items-center gap-2.5 group focus:outline-none shrink-0">
+                <svg class="w-9 h-9 sm:w-10 sm:h-10 text-teal-400 group-hover:rotate-12 transition-transform duration-500" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <!-- Microchip outer body -->
+                    <rect x="14" y="14" width="36" height="36" rx="4" />
+                    <!-- Top pins -->
+                    <line x1="22" y1="8" x2="22" y2="14" /><line x1="32" y1="8" x2="32" y2="14" /><line x1="42" y1="8" x2="42" y2="14" />
+                    <!-- Bottom pins -->
+                    <line x1="22" y1="50" x2="22" y2="56" /><line x1="32" y1="50" x2="32" y2="56" /><line x1="42" y1="50" x2="42" y2="56" />
+                    <!-- Left pins -->
+                    <line x1="8" y1="22" x2="14" y2="22" /><line x1="8" y1="32" x2="14" y2="32" /><line x1="8" y1="42" x2="14" y2="42" />
+                    <!-- Right pins -->
+                    <line x1="50" y1="22" x2="56" y2="22" /><line x1="50" y1="32" x2="56" y2="32" /><line x1="50" y1="42" x2="56" y2="42" />
+                    <!-- Pin dots -->
+                    <circle cx="6" cy="22" r="1.4" fill="currentColor" stroke="none" /><circle cx="6" cy="32" r="1.4" fill="currentColor" stroke="none" /><circle cx="6" cy="42" r="1.4" fill="currentColor" stroke="none" />
+                    <circle cx="58" cy="22" r="1.4" fill="currentColor" stroke="none" /><circle cx="58" cy="32" r="1.4" fill="currentColor" stroke="none" /><circle cx="58" cy="42" r="1.4" fill="currentColor" stroke="none" />
+                    <circle cx="22" cy="6" r="1.4" fill="currentColor" stroke="none" /><circle cx="32" cy="6" r="1.4" fill="currentColor" stroke="none" /><circle cx="42" cy="6" r="1.4" fill="currentColor" stroke="none" />
+                    <circle cx="22" cy="58" r="1.4" fill="currentColor" stroke="none" /><circle cx="32" cy="58" r="1.4" fill="currentColor" stroke="none" /><circle cx="42" cy="58" r="1.4" fill="currentColor" stroke="none" />
+                    <!-- Atom orbits -->
+                    <ellipse cx="32" cy="32" rx="11" ry="5" />
+                    <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(60 32 32)" />
+                    <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(-60 32 32)" />
+                    <!-- Nucleus -->
+                    <circle cx="32" cy="32" r="2.4" fill="currentColor" stroke="none" />
+                </svg>
+                <span class="text-xl sm:text-2xl font-extrabold tracking-wide text-white group-hover:text-teal-400 transition-colors duration-300">
+                    Qubitex
+                </span>
             </a>
 
             <!-- Desktop Links -->
@@ -529,9 +554,6 @@
 
             <!-- Header Right: Desktop Button / Compact Mobile Action Button -->
             <div class="flex items-center gap-3">
-                <button id="themeToggle" type="button" class="w-10 h-10 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-200 hover:text-teal-400 hover:border-teal-400/50 transition-all duration-300 flex items-center justify-center cursor-pointer" aria-label="Switch to light mode" aria-pressed="false">
-                    <i id="themeToggleIcon" class="fa-solid fa-sun text-sm"></i>
-                </button>
                 <button onclick="openDemoModal('Book a Demo — Quantum Bit Exchange')" class="px-4 py-2 sm:px-5 sm:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl text-xs sm:text-sm font-semibold btn-glow-purple cursor-pointer">
                     Book Demo
                 </button>
@@ -547,16 +569,16 @@
                 <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Home</span>
             </a>
             <a href="#programs" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
-                <i class="fa-solid fa-graduation-cap text-base mb-0.5"></i>
-                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Courses</span>
+                <i class="fa-solid fa-layer-group text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Tracks</span>
             </a>
             <a href="#projects" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
-                <i class="fa-solid fa-bolt text-base mb-0.5"></i>
+                <i class="fa-solid fa-rocket text-base mb-0.5"></i>
                 <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Labs</span>
             </a>
             <a href="#contact" class="mobile-tab-item flex flex-col items-center justify-center text-slate-400 hover:text-teal-400 transition-colors py-1">
-                <i class="fa-solid fa-envelope text-base mb-0.5"></i>
-                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Mail</span>
+                <i class="fa-solid fa-paper-plane text-base mb-0.5"></i>
+                <span class="text-[9px] font-bold tracking-tight block uppercase font-mono">Connect</span>
             </a>
         </div>
     </nav>
@@ -1614,14 +1636,14 @@
                                 </div>
                                 <div class="space-y-1">
                                     <label for="contactEmail" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Email Address</label>
-                                    <input id="contactEmail" name="email" type="email" required placeholder="info@qubitex.in" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
+                                    <input id="contactEmail" name="email" type="email" required placeholder="alex@domain.com" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div class="space-y-1">
                                     <label for="contactPhone" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Phone Number</label>
-                                    <input id="contactPhone" name="phone" type="tel" placeholder="+91 993 0000 529" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
+                                    <input id="contactPhone" name="phone" type="tel" placeholder="+91 98765 43210" class="w-full bg-slate-950/60 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors">
                                 </div>
                                 <div class="space-y-1">
                                     <label for="contactProgram" class="text-[11px] uppercase tracking-wider font-mono text-slate-400 font-bold block">Primary Program Interest</label>
@@ -1649,7 +1671,7 @@
                                 </button>
                             </div>
                             <p class="text-[10px] text-slate-500 leading-relaxed pt-1">
-                                <i class="fa-solid fa-circle-info mr-1 text-teal-400"></i> On submission, your details will be pre-filled in an email to our admissions team at <span class="text-emerald-400 font-bold">enquire.am@gmail.com</span>. Just hit Send.
+                                <i class="fa-solid fa-circle-info mr-1 text-teal-400"></i> On submission, your details will be pre-filled in an email to our admissions team at <span class="text-emerald-400 font-bold">qubitex@zohomail.in</span>. Just hit Send.
                             </p>
                         </form>
                     </div>
@@ -1666,7 +1688,7 @@
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="text-teal-400 mt-0.5"><i class="fa-solid fa-envelope"></i></div>
-                                    <p class="text-slate-300">enquire.am@gmail.com</p>
+                                    <p class="text-slate-300">qubitex@zohomail.in</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="text-yellow-400 mt-0.5"><i class="fa-solid fa-phone"></i></div>
@@ -1708,8 +1730,21 @@
                 
                 <!-- Footer Info / Branding -->
                 <div class="md:col-span-4 space-y-4">
-                    <a href="#home" class="text-lg font-extrabold tracking-tight text-white">
-                        Qubitex
+                    <a href="#home" class="flex items-center gap-2 group">
+                        <svg class="w-8 h-8 text-teal-400 group-hover:rotate-12 transition-transform duration-500" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="14" y="14" width="36" height="36" rx="4" />
+                            <line x1="22" y1="8" x2="22" y2="14" /><line x1="32" y1="8" x2="32" y2="14" /><line x1="42" y1="8" x2="42" y2="14" />
+                            <line x1="22" y1="50" x2="22" y2="56" /><line x1="32" y1="50" x2="32" y2="56" /><line x1="42" y1="50" x2="42" y2="56" />
+                            <line x1="8" y1="22" x2="14" y2="22" /><line x1="8" y1="32" x2="14" y2="32" /><line x1="8" y1="42" x2="14" y2="42" />
+                            <line x1="50" y1="22" x2="56" y2="22" /><line x1="50" y1="32" x2="56" y2="32" /><line x1="50" y1="42" x2="56" y2="42" />
+                            <ellipse cx="32" cy="32" rx="11" ry="5" />
+                            <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(60 32 32)" />
+                            <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(-60 32 32)" />
+                            <circle cx="32" cy="32" r="2.4" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span class="text-lg font-extrabold tracking-wide text-white group-hover:text-teal-400 transition-colors duration-300">
+                            Qubitex
+                        </span>
                     </a>
                     <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
                         Qubitex delivers state-of-the-art gamified courses in code logic execution, safe web behavior parameters, foundational artificial intelligence prompts, and resilient personal wealth tactics.
@@ -1752,9 +1787,6 @@
                     <p class="text-slate-400 leading-relaxed">
                         Authorized continuous training framework compliance logs. Fully COPPA compliant. Encryption protocols audited yearly.
                     </p>
-                    <div class="text-[11px] text-slate-500 font-mono">
-                        Server Node Ref: <span class="text-emerald-400 font-bold">QB-USA-MAIN-99</span>
-                    </div>
                 </div>
 
             </div>
@@ -2021,37 +2053,7 @@
         animateParticles();
 
 
-        // 2. Dark / Light Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeToggleIcon = document.getElementById('themeToggleIcon');
-
-        function applyTheme(theme) {
-            const isLight = theme === 'light';
-            document.body.classList.toggle('light-mode', isLight);
-            document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
-
-            if (themeToggle && themeToggleIcon) {
-                themeToggle.setAttribute('aria-pressed', String(isLight));
-                themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-                themeToggleIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
-            }
-
-            localStorage.setItem('qbe-theme', theme);
-        }
-
-        const savedTheme = localStorage.getItem('qbe-theme');
-        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        applyTheme(savedTheme || (prefersLight ? 'light' : 'dark'));
-
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
-                applyTheme(nextTheme);
-            });
-        }
-
-
-        // 3. Sticky Navbar Blur & Behavior on Scroll
+        // 2. Sticky Navbar Blur & Behavior on Scroll
         const mainHeader = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
@@ -2242,7 +2244,7 @@
             const formattedTime = startDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
             const isEnrollment = !!pendingEnrollmentCountId;
-            const targetEmail = 'enquire.am@gmail.com';
+            const targetEmail = 'qubitex@zohomail.in';
             const whatsappNumber = '919930000529';
 
             if (isEnrollment) {
@@ -2518,7 +2520,7 @@ ${name}`;
 
 
         // 7. Contact Form -> Email Auto-Forward Handler
-        // Submits all form details via prefilled email to enquire.am@gmail.com
+        // Submits all form details via prefilled email to qubitex@zohomail.in
         function handleContactSubmit(event) {
             event.preventDefault();
 
