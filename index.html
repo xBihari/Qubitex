@@ -530,32 +530,35 @@
     <!-- HEADER / NAVBAR -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="mainHeader">
         <nav class="container mx-auto px-5 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3">
-            <!-- Logo: Microchip + Atom (Quantum Computing Aesthetic) -->
+            <!-- Logo: Money Bag + Microchip (Purple Theme) -->
             <a href="#home" class="flex items-center gap-2.5 group focus:outline-none shrink-0">
-                <svg class="w-9 h-9 sm:w-10 sm:h-10 text-teal-400 group-hover:rotate-12 transition-transform duration-500" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <!-- Microchip outer body -->
-                    <rect x="14" y="14" width="36" height="36" rx="4" />
-                    <!-- Top pins -->
-                    <line x1="22" y1="8" x2="22" y2="14" /><line x1="32" y1="8" x2="32" y2="14" /><line x1="42" y1="8" x2="42" y2="14" />
-                    <!-- Bottom pins -->
-                    <line x1="22" y1="50" x2="22" y2="56" /><line x1="32" y1="50" x2="32" y2="56" /><line x1="42" y1="50" x2="42" y2="56" />
-                    <!-- Left pins -->
-                    <line x1="8" y1="22" x2="14" y2="22" /><line x1="8" y1="32" x2="14" y2="32" /><line x1="8" y1="42" x2="14" y2="42" />
-                    <!-- Right pins -->
-                    <line x1="50" y1="22" x2="56" y2="22" /><line x1="50" y1="32" x2="56" y2="32" /><line x1="50" y1="42" x2="56" y2="42" />
-                    <!-- Pin dots -->
-                    <circle cx="6" cy="22" r="1.4" fill="currentColor" stroke="none" /><circle cx="6" cy="32" r="1.4" fill="currentColor" stroke="none" /><circle cx="6" cy="42" r="1.4" fill="currentColor" stroke="none" />
-                    <circle cx="58" cy="22" r="1.4" fill="currentColor" stroke="none" /><circle cx="58" cy="32" r="1.4" fill="currentColor" stroke="none" /><circle cx="58" cy="42" r="1.4" fill="currentColor" stroke="none" />
-                    <circle cx="22" cy="6" r="1.4" fill="currentColor" stroke="none" /><circle cx="32" cy="6" r="1.4" fill="currentColor" stroke="none" /><circle cx="42" cy="6" r="1.4" fill="currentColor" stroke="none" />
-                    <circle cx="22" cy="58" r="1.4" fill="currentColor" stroke="none" /><circle cx="32" cy="58" r="1.4" fill="currentColor" stroke="none" /><circle cx="42" cy="58" r="1.4" fill="currentColor" stroke="none" />
-                    <!-- Atom orbits -->
-                    <ellipse cx="32" cy="32" rx="11" ry="5" />
-                    <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(60 32 32)" />
-                    <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(-60 32 32)" />
-                    <!-- Nucleus -->
-                    <circle cx="32" cy="32" r="2.4" fill="currentColor" stroke="none" />
+                <svg class="w-10 h-10 sm:w-11 sm:h-11 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <!-- Tied top of bag -->
+                    <path d="M22 17 Q 22 13 26 13 L 38 13 Q 42 13 42 17 L 41 22 Q 41 24 39 24 L 25 24 Q 23 24 23 22 Z" fill="#C084FC" />
+                    <!-- Main bag body -->
+                    <path d="M25 24 L 39 24 Q 41 24 42 26 Q 50 36 50 44 Q 50 52 42 52 L 22 52 Q 14 52 14 44 Q 14 36 22 26 Q 23 24 25 24 Z" fill="#C084FC" />
+                    <!-- Microchip body -->
+                    <rect x="26" y="32" width="12" height="12" rx="1.5" fill="#F3E8FF" />
+                    <!-- Top chip pins -->
+                    <rect x="28" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                    <rect x="31.2" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                    <rect x="34.4" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                    <!-- Bottom chip pins -->
+                    <rect x="28" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                    <rect x="31.2" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                    <rect x="34.4" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                    <!-- Left chip pins -->
+                    <rect x="23" y="34" width="3" height="1.6" fill="#F3E8FF" />
+                    <rect x="23" y="37.2" width="3" height="1.6" fill="#F3E8FF" />
+                    <rect x="23" y="40.4" width="3" height="1.6" fill="#F3E8FF" />
+                    <!-- Right chip pins -->
+                    <rect x="38" y="34" width="3" height="1.6" fill="#F3E8FF" />
+                    <rect x="38" y="37.2" width="3" height="1.6" fill="#F3E8FF" />
+                    <rect x="38" y="40.4" width="3" height="1.6" fill="#F3E8FF" />
+                    <!-- Inner chip dot -->
+                    <circle cx="32" cy="38" r="2" fill="#C084FC" />
                 </svg>
-                <span class="text-xl sm:text-2xl font-extrabold tracking-wide text-white group-hover:text-teal-400 transition-colors duration-300">
+                <span class="text-xl sm:text-2xl font-extrabold tracking-wide text-white group-hover:text-purple-400 transition-colors duration-300">
                     Qubitex
                 </span>
             </a>
@@ -1749,18 +1752,25 @@
                 <!-- Footer Info / Branding -->
                 <div class="md:col-span-4 space-y-4">
                     <a href="#home" class="flex items-center gap-2 group">
-                        <svg class="w-8 h-8 text-teal-400 group-hover:rotate-12 transition-transform duration-500" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <rect x="14" y="14" width="36" height="36" rx="4" />
-                            <line x1="22" y1="8" x2="22" y2="14" /><line x1="32" y1="8" x2="32" y2="14" /><line x1="42" y1="8" x2="42" y2="14" />
-                            <line x1="22" y1="50" x2="22" y2="56" /><line x1="32" y1="50" x2="32" y2="56" /><line x1="42" y1="50" x2="42" y2="56" />
-                            <line x1="8" y1="22" x2="14" y2="22" /><line x1="8" y1="32" x2="14" y2="32" /><line x1="8" y1="42" x2="14" y2="42" />
-                            <line x1="50" y1="22" x2="56" y2="22" /><line x1="50" y1="32" x2="56" y2="32" /><line x1="50" y1="42" x2="56" y2="42" />
-                            <ellipse cx="32" cy="32" rx="11" ry="5" />
-                            <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(60 32 32)" />
-                            <ellipse cx="32" cy="32" rx="11" ry="5" transform="rotate(-60 32 32)" />
-                            <circle cx="32" cy="32" r="2.4" fill="currentColor" stroke="none" />
+                        <svg class="w-9 h-9 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                            <path d="M22 17 Q 22 13 26 13 L 38 13 Q 42 13 42 17 L 41 22 Q 41 24 39 24 L 25 24 Q 23 24 23 22 Z" fill="#C084FC" />
+                            <path d="M25 24 L 39 24 Q 41 24 42 26 Q 50 36 50 44 Q 50 52 42 52 L 22 52 Q 14 52 14 44 Q 14 36 22 26 Q 23 24 25 24 Z" fill="#C084FC" />
+                            <rect x="26" y="32" width="12" height="12" rx="1.5" fill="#F3E8FF" />
+                            <rect x="28" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="31.2" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="34.4" y="29" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="28" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="31.2" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="34.4" y="44" width="1.6" height="3" fill="#F3E8FF" />
+                            <rect x="23" y="34" width="3" height="1.6" fill="#F3E8FF" />
+                            <rect x="23" y="37.2" width="3" height="1.6" fill="#F3E8FF" />
+                            <rect x="23" y="40.4" width="3" height="1.6" fill="#F3E8FF" />
+                            <rect x="38" y="34" width="3" height="1.6" fill="#F3E8FF" />
+                            <rect x="38" y="37.2" width="3" height="1.6" fill="#F3E8FF" />
+                            <rect x="38" y="40.4" width="3" height="1.6" fill="#F3E8FF" />
+                            <circle cx="32" cy="38" r="2" fill="#C084FC" />
                         </svg>
-                        <span class="text-lg font-extrabold tracking-wide text-white group-hover:text-teal-400 transition-colors duration-300">
+                        <span class="text-lg font-extrabold tracking-wide text-white group-hover:text-purple-400 transition-colors duration-300">
                             Qubitex
                         </span>
                     </a>
